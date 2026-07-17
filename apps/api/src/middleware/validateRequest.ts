@@ -11,7 +11,13 @@ export function validateRequest(schemas: RequestSchemas): RequestHandler {
   return (req: Request, _res: Response, next: NextFunction): void => {
     if (schemas.body) req.body = schemas.body.parse(req.body);
     if (schemas.params) req.params = schemas.params.parse(req.params) as z.infer<NonNullable<typeof schemas.params>>;
-    if (schemas.query) req.query = schemas.query.parse(req.query) as z.infer<NonNullable<typeof schemas.query>>;
+    if (schemas.query) {
+      const parsedQuery = schemas.query.parse(req.query) as z.infer<NonNullable<typeof schemas.query>>;
+      Object.keys(req.query).forEach((key) => {
+        delete req.query[key];
+      });
+      Object.assign(req.query, parsedQuery);
+    }
     next();
   };
 }
