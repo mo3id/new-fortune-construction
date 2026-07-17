@@ -27,3 +27,6 @@ dist-ssr
 .mongodb-data/
 apps/api/.mongodb-data/
 .vercel
+
+# Spec Kit - opencode agent credentials
+.opencode/

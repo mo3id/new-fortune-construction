@@ -54,15 +54,27 @@ export const loginSchema = z.object({
 export const projectSchema = z.object({
   title: baseSchemas.requiredString('Title is required', 2),
   category: baseSchemas.requiredString('Category is required'),
+  status: z.enum(['Ongoing', 'Completed']).default('Ongoing'),
   location: baseSchemas.requiredString('Location is required'),
+  clientName: z.string().optional(),
+  projectValue: z.string().optional(),
   startDate: z.coerce.date().optional(),
   endDate: z.coerce.date().optional(),
   budget: z.coerce.number({ invalid_type_error: 'Budget must be a number' }).positive('Budget must be positive').optional().or(z.literal('')),
+  duration: z.string().optional(),
+  yearCompleted: z.string().optional(),
+  overview: z.string().optional(),
+  scopeOfWork: z.array(z.string()).optional().default([]),
+  technologies: z.array(z.string()).optional().default([]),
   coverImage: z.string().optional().or(z.literal('')),
   challenge: z.string().optional(),
   solution: z.string().optional(),
   result: z.string().optional(),
   galleryImages: z.array(z.string()).optional().default([]),
+  coordinates: z.object({
+    lat: z.coerce.number().optional().or(z.literal('')),
+    lng: z.coerce.number().optional().or(z.literal('')),
+  }).optional(),
 })
 
 export const serviceSchema = z.object({

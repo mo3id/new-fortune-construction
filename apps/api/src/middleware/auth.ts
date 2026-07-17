@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
+import { getRequiredJwtSecret } from '../config/runtime';
 
 export interface AuthRequest extends Request {
   adminId?: string;
@@ -12,8 +13,20 @@ export function protect(req: AuthRequest, res: Response, next: NextFunction): vo
     return;
   }
   const token = header.split(' ')[1];
+
+  let jwtSecret: string;
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'secret') as { id: string };
+    jwtSecret = getRequiredJwtSecret();
+  } catch {
+    res.status(500).json({
+      message: 'Authentication configuration error',
+      code: 'AUTH_CONFIG_ERROR',
+    });
+    return;
+  }
+
+  try {
+    const decoded = jwt.verify(token, jwtSecret) as { id: string };
     req.adminId = decoded.id;
     next();
   } catch {

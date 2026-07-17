@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 import { connectDB } from './config/db';
+import { safeLogger } from './utils/safeLogger';
 import Admin from './models/Admin';
 import Project from './models/Project';
 import Service from './models/Service';
@@ -14,7 +15,7 @@ async function seed() {
 
   await Admin.deleteMany({});
   await Admin.create({ username: 'admin', password: 'admin123' });
-  console.log('✅ Admin created: admin / admin123');
+  safeLogger.info('Default administrative account seeded.');
 
   await Project.deleteMany({});
   await Project.insertMany([
@@ -118,8 +119,11 @@ async function seed() {
   console.log('✅ Site settings seeded');
 
   console.log('\n🎉 Database seeded successfully!');
-  console.log('   Login: admin / admin123');
+  safeLogger.info('Seed completed; use configured local credentials to sign in.');
   process.exit(0);
 }
 
-seed().catch((err) => { console.error(err); process.exit(1); });
+seed().catch((err) => {
+  safeLogger.error('Database seed failed.', err);
+  process.exit(1);
+});

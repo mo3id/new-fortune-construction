@@ -3,12 +3,14 @@ import { motion } from 'framer-motion'
 import {
   LayoutDashboard, FolderKanban, Briefcase, MessageSquare,
   Users, Handshake, Settings, Wrench, HardHat, ChevronRight, FileText, Trophy,
+  Tags,
 } from 'lucide-react'
 import { cn } from '@fortune/shared-ui'
 
 const NAV = [
   { label: 'Overview', icon: LayoutDashboard, to: '/' },
   { label: 'Projects', icon: FolderKanban, to: '/projects' },
+  { label: 'Project Categories', icon: Tags, to: '/project-categories' },
   { label: 'Services', icon: Wrench, to: '/services' },
   { label: 'Team', icon: Users, to: '/team' },
   { label: 'Partners', icon: Handshake, to: '/partners' },

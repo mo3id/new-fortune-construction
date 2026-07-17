@@ -3,6 +3,8 @@ import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
 import { protect } from '../middleware/auth';
+import { ApiError } from '../middleware/errors';
+import { sanitizeUploadFilename, uploadFileFilter, uploadSizeLimit } from '../utils/uploadValidation';
 
 const imageUploadDir = path.join(__dirname, '../../uploads/images');
 const videoUploadDir = path.join(__dirname, '../../uploads/videos');
@@ -12,55 +14,39 @@ if (!fs.existsSync(videoUploadDir)) fs.mkdirSync(videoUploadDir, { recursive: tr
 const imageStorage = multer.diskStorage({
   destination: (_req, _file, cb) => cb(null, imageUploadDir),
   filename: (_req, file, cb) => {
-    const ext = path.extname(file.originalname);
-    cb(null, `${Date.now()}-${Math.random().toString(36).slice(2)}${ext}`);
+    cb(null, sanitizeUploadFilename(file.originalname));
   },
 });
 
 const videoStorage = multer.diskStorage({
   destination: (_req, _file, cb) => cb(null, videoUploadDir),
   filename: (_req, file, cb) => {
-    const ext = path.extname(file.originalname);
-    cb(null, `${Date.now()}-${Math.random().toString(36).slice(2)}${ext}`);
+    cb(null, sanitizeUploadFilename(file.originalname));
   },
 });
 
 const imageUpload = multer({
   storage: imageStorage,
-  limits: { fileSize: 10 * 1024 * 1024 },
-  fileFilter: (_req, file, cb) => {
-    const allowed = /jpeg|jpg|png|webp|gif/;
-    if (allowed.test(path.extname(file.originalname).toLowerCase())) {
-      cb(null, true);
-    } else {
-      cb(new Error('Only image files are allowed'));
-    }
-  },
+  limits: { fileSize: uploadSizeLimit('image') },
+  fileFilter: uploadFileFilter('image'),
 });
 
 const videoUpload = multer({
   storage: videoStorage,
-  limits: { fileSize: 100 * 1024 * 1024 },
-  fileFilter: (_req, file, cb) => {
-    const allowed = /mp4|webm|mov|avi/;
-    if (allowed.test(path.extname(file.originalname).toLowerCase())) {
-      cb(null, true);
-    } else {
-      cb(new Error('Only video files (mp4, webm, mov, avi) are allowed'));
-    }
-  },
+  limits: { fileSize: uploadSizeLimit('video') },
+  fileFilter: uploadFileFilter('video'),
 });
 
 const router = Router();
 
 router.post('/', protect, imageUpload.single('image'), (req: Request, res: Response): void => {
-  if (!req.file) { res.status(400).json({ message: 'No file uploaded' }); return; }
+  if (!req.file) { throw new ApiError(400, 'Invalid upload', 'UPLOAD_VALIDATION_ERROR'); }
   const url = `/uploads/images/${req.file.filename}`;
   res.json({ url, type: 'image' });
 });
 
 router.post('/video', protect, videoUpload.single('video'), (req: Request, res: Response): void => {
-  if (!req.file) { res.status(400).json({ message: 'No video uploaded' }); return; }
+  if (!req.file) { throw new ApiError(400, 'Invalid upload', 'UPLOAD_VALIDATION_ERROR'); }
   const url = `/uploads/videos/${req.file.filename}`;
   res.json({ url, type: 'video' });
 });

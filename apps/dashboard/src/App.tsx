@@ -12,6 +12,7 @@ import Partners from './pages/Partners'
 import Services from './pages/Services'
 import Settings from './pages/Settings'
 import PageContent from './pages/PageContent'
+import ProjectCategories from './pages/ProjectCategories'
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
   return authStorage.isLoggedIn() ? <>{children}</> : <Navigate to="/login" replace />
@@ -31,6 +32,7 @@ export default function App() {
       >
         <Route index element={<Overview />} />
         <Route path="projects" element={<Projects />} />
+        <Route path="project-categories" element={<ProjectCategories />} />
         <Route path="applications" element={<Applications />} />
         <Route path="messages" element={<Messages />} />
         <Route path="jobs" element={<Jobs />} />

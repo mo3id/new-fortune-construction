@@ -7,9 +7,10 @@ import JobPosition from './models/JobPosition';
 import SiteSettings from './models/SiteSettings';
 import PageContent from './models/PageContent';
 import SuccessStory from './models/SuccessStory';
+import { safeLogger } from './utils/safeLogger';
 
 export async function autoSeed(): Promise<void> {
-  console.log('🌱 Auto-seeding in-memory database...');
+  safeLogger.info('Auto-seeding in-memory database...');
 
   await Admin.create({ username: 'admin', password: 'admin123' });
 
@@ -231,5 +232,5 @@ export async function autoSeed(): Promise<void> {
     },
   ]);
 
-  console.log('✅ Auto-seed complete — login: admin / admin123');
+  safeLogger.info('Auto-seed complete; default administrative account is ready.');
 }
