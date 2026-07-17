@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { PageHero } from '@fortune/shared-ui'
 import { useQuery } from '@tanstack/react-query'
-import { Building2, CheckCircle2, Route, Users } from 'lucide-react'
+import { CheckCircle2, Route, ShieldCheck, Users } from 'lucide-react'
 import { apiFetch } from '@/lib/apiClient'
 import { fallbackProjects, normalizeProject, RawProject } from '@/lib/projectPresentation'
 import { MalawiProjectMap } from '@/components/projects/MalawiProjectMap'
@@ -9,22 +9,16 @@ import { ProjectPortfolioFilters } from '@/components/projects/ProjectPortfolioF
 import { ProjectPortfolioGrid } from '@/components/projects/ProjectPortfolioGrid'
 import { ProjectPortfolioStats, PortfolioStat } from '@/components/projects/ProjectPortfolioStats'
 import {
-    CATEGORY_FILTERS,
+    DEFAULT_CATEGORY_OPTIONS,
     ProjectCategoryFilter,
+    ProjectCategoryOption,
     ProjectStatusFilter,
-    STATUS_FILTERS,
 } from '@/components/projects/portfolioConfig'
-
-function getCounts<T extends string>(items: readonly T[], allCount: number, getCount: (item: T) => number): Record<T, number> {
-    return items.reduce<Record<T, number>>((counts, item) => {
-        counts[item] = item === 'All' ? allCount : getCount(item)
-        return counts
-    }, {} as Record<T, number>)
-}
 
 export default function ProjectsPage() {
     const [category, setCategory] = useState<ProjectCategoryFilter>('All')
     const [status, setStatus] = useState<ProjectStatusFilter>('All')
+    const [searchQuery, setSearchQuery] = useState('')
 
     const { data: apiProjects, isLoading } = useQuery<RawProject[]>({
         queryKey: ['projects'],
@@ -37,51 +31,68 @@ export default function ProjectsPage() {
         [apiProjects],
     )
 
+    const { data: apiCategories } = useQuery<ProjectCategoryOption[]>({
+        queryKey: ['project-categories'],
+        queryFn: () => apiFetch<ProjectCategoryOption[]>('/project-categories'),
+        staleTime: 60_000,
+    })
+
+    const categories = useMemo(
+        () => (apiCategories?.length ? apiCategories : DEFAULT_CATEGORY_OPTIONS)
+            .filter((item) => item.isActive !== false)
+            .sort((a, b) => (a.order || 0) - (b.order || 0)),
+        [apiCategories],
+    )
+
     const filteredProjects = useMemo(
-        () => projects.filter((project) =>
-            (category === 'All' || project.category === category) &&
-            (status === 'All' || project.status === status),
-        ),
-        [category, projects, status],
-    )
-
-    const [selectedMapProject, setSelectedMapProject] = useState<string | undefined>(projects[0]?._id)
-    const completedCount = projects.filter((project) => project.status === 'Completed').length
-
-    const categoryCounts = useMemo(
-        () => getCounts(CATEGORY_FILTERS, projects.length, (item) => projects.filter((project) => project.category === item).length),
-        [projects],
-    )
-
-    const statusCounts = useMemo(
-        () => getCounts(STATUS_FILTERS, projects.length, (item) => projects.filter((project) => project.status === item).length),
-        [projects],
+        () => {
+            const query = searchQuery.trim().toLowerCase()
+            return projects.filter((project) => {
+                const matchesCategory = category === 'All' || project.category === category
+                const matchesStatus = status === 'All' || project.status === status
+                const searchable = [
+                    project.title,
+                    project.location,
+                    project.clientName,
+                    project.category,
+                    project.overview,
+                ].join(' ').toLowerCase()
+                const matchesSearch = !query || searchable.includes(query)
+                return matchesCategory && matchesStatus && matchesSearch
+            })
+        },
+        [category, projects, searchQuery, status],
     )
 
     const portfolioStats: PortfolioStat[] = [
         {
             icon: CheckCircle2,
-            value: `${Math.max(completedCount, 500)}+`,
+            value: '120+',
             label: 'Completed Projects',
-            supportingText: 'Portfolio and legacy delivery record',
+            sublabel: 'Across Malawi',
+            supportingText: '',
         },
         {
             icon: Route,
-            value: '1,500+',
-            label: 'Km Roads Constructed',
-            supportingText: 'Roadworks, rehabilitation, and access infrastructure',
+            value: '850',
+            unit: 'km',
+            label: 'Roads Constructed',
+            sublabel: 'Paved & Upgraded',
+            supportingText: '',
         },
         {
-            icon: Building2,
+            icon: ShieldCheck,
             value: '20+',
             label: 'Years Experience',
-            supportingText: 'Civil, infrastructure, and commercial delivery',
+            sublabel: "Engineering Malawi's Growth",
+            supportingText: '',
         },
         {
             icon: Users,
-            value: 'Multi-team',
-            label: 'Employees & Specialists',
-            supportingText: 'Office, engineering, site, HSE, and delivery teams',
+            value: '450+',
+            label: 'Employees',
+            sublabel: 'Skilled. Trained. Committed.',
+            supportingText: '',
         },
     ]
 
@@ -89,33 +100,51 @@ export default function ProjectsPage() {
         <div className="flex min-h-screen w-full flex-col bg-white dark:bg-slate-950">
             <PageHero
                 title="Project Portfolio"
-                description="Detailed infrastructure and construction case studies showing scale, delivery discipline, and measurable outcomes across Malawi."
-                imageSrc="https://images.unsplash.com/photo-1545558014-8ab6aa17e307?q=80&w=2000&auto=format&fit=crop&fm=webp"
-                imageAlt="Major construction project view"
+                description="A premium view of Fortune Construction's infrastructure, building, and civil works across Malawi."
+                imageSrc="https://images.unsplash.com/photo-1545558014-8ab6aa17e307?q=80&w=2200&auto=format&fit=crop&fm=webp"
+                imageAlt="Large construction project site"
             />
 
             <ProjectPortfolioStats stats={portfolioStats} />
 
-            <section className="relative overflow-hidden px-6 py-20 md:py-28">
-                <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(15,23,42,.045)_1px,transparent_1px),linear-gradient(rgba(15,23,42,.035)_1px,transparent_1px)] bg-[size:72px_72px] dark:bg-[linear-gradient(90deg,rgba(255,255,255,.035)_1px,transparent_1px),linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px)]" />
-                <div className="absolute inset-x-0 top-0 -z-10 h-96 bg-gradient-to-b from-slate-50 via-white to-transparent dark:from-slate-900 dark:via-slate-950" />
+            <section className="bg-slate-50 px-6 pb-20 pt-10 dark:bg-slate-950 md:pb-28">
+                <div className="mx-auto mb-8 flex max-w-[1800px] flex-col justify-between gap-6 border-b border-slate-200 pb-8 dark:border-slate-800 lg:flex-row lg:items-end">
+                    <div>
+                        <span className="text-[11px] font-black uppercase tracking-[0.26em] text-teal-700 dark:text-teal-300">Selected work</span>
+                        <h2 className="mt-3 max-w-3xl text-4xl font-display font-bold tracking-tight text-slate-950 dark:text-white md:text-5xl">
+                            Case studies with scale, context, and delivery outcomes.
+                        </h2>
+                    </div>
+                    <p className="max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300">
+                        Browse by sector and project status, then open a detailed case study for scope, methods, delivery challenges, and results.
+                    </p>
+                </div>
 
-                <div className="mx-auto max-w-7xl">
-                    <ProjectPortfolioFilters
-                        category={category}
-                        categoryCounts={categoryCounts}
-                        filteredCount={filteredProjects.length}
-                        onCategoryChange={setCategory}
-                        onStatusChange={setStatus}
-                        status={status}
-                        statusCounts={statusCounts}
-                    />
+                <div className="mx-auto grid max-w-[1800px] gap-10 xl:grid-cols-[minmax(0,1fr)_500px]">
+                    <main>
+                        <ProjectPortfolioFilters
+                            categories={categories}
+                            category={category}
+                            onClearFilters={() => {
+                                setCategory('All')
+                                setStatus('All')
+                                setSearchQuery('')
+                            }}
+                            onCategoryChange={setCategory}
+                            onSearchChange={setSearchQuery}
+                            onStatusChange={setStatus}
+                            searchQuery={searchQuery}
+                            status={status}
+                        />
 
-                    <ProjectPortfolioGrid isLoading={isLoading} projects={filteredProjects} />
+                        <div className="mt-12 md:mt-16">
+                            <ProjectPortfolioGrid isLoading={isLoading} projects={filteredProjects} />
+                        </div>
+                    </main>
+
+                    <MalawiProjectMap projects={projects} />
                 </div>
             </section>
-
-            <MalawiProjectMap projects={projects} selectedId={selectedMapProject} onSelect={setSelectedMapProject} />
         </div>
     )
 }

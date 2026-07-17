@@ -18,16 +18,21 @@ export function ProjectPortfolioGrid({ isLoading, projects }: ProjectPortfolioGr
 
     if (!projects.length) {
         return (
-            <div className="border border-dashed border-slate-300 bg-slate-50 p-12 text-center dark:border-slate-700 dark:bg-slate-900">
-                <CalendarCheck className="mx-auto mb-5 h-10 w-10 text-teal-600" />
-                <h3 className="text-2xl font-display font-bold text-slate-950 dark:text-white">No projects match this filter</h3>
-                <p className="mt-3 text-slate-500">Try another category or status to continue browsing the portfolio.</p>
+            <div className="relative overflow-hidden rounded-[28px] border border-dashed border-slate-300 bg-white p-12 text-center shadow-[0_18px_70px_rgba(15,23,42,0.06)] dark:border-slate-700 dark:bg-slate-900 md:p-16">
+                <div className="absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-teal-400/50 to-transparent" />
+                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-teal-50 text-teal-700 dark:bg-teal-500/10 dark:text-teal-300">
+                    <CalendarCheck className="h-9 w-9" />
+                </div>
+                <h3 className="text-2xl font-display font-bold text-slate-950 dark:text-white md:text-3xl">No projects match this filter</h3>
+                <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-500">
+                    Try another project type or delivery status to continue browsing the portfolio.
+                </p>
             </div>
         )
     }
 
     return (
-        <div className="grid gap-7 lg:grid-cols-2">
+        <div className="grid gap-6">
             {projects.map((project, index) => (
                 <ProjectCaseStudyCard key={project._id} project={project} index={index} />
             ))}

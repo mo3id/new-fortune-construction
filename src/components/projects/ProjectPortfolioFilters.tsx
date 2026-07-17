@@ -1,153 +1,160 @@
-import { Filter, Sparkles, Hammer } from 'lucide-react'
+import { Search, SlidersHorizontal, X } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import {
-    CATEGORY_FILTERS,
-    CATEGORY_META,
+    getCategoryIcon,
     ProjectCategoryFilter,
+    ProjectCategoryOption,
     ProjectStatusFilter,
     STATUS_FILTERS,
     STATUS_META,
 } from './portfolioConfig'
 
-interface FilterButtonProps {
+interface CommandButtonProps {
     active: boolean
-    count: number
     icon: LucideIcon
     label: string
     onClick: () => void
 }
 
-function FilterButton({ active, count, icon: Icon, label, onClick }: FilterButtonProps) {
+function CommandButton({ active, icon: Icon, label, onClick }: CommandButtonProps) {
     return (
         <button
             type="button"
             onClick={onClick}
-            className={`group/filter relative flex h-12 shrink-0 items-center gap-3 overflow-hidden border px-4 text-left transition-all duration-300 ${
+            className={`group/filter inline-flex h-12 shrink-0 items-center gap-2.5 rounded-2xl border px-4 text-sm font-black transition-all duration-300 md:h-14 md:px-5 ${
                 active
-                    ? 'border-slate-950 bg-slate-950 text-white shadow-xl shadow-slate-900/15 dark:border-teal-400 dark:bg-teal-500 dark:text-slate-950'
-                    : 'border-slate-200 bg-white/80 text-slate-600 hover:-translate-y-0.5 hover:border-teal-400 hover:bg-white hover:text-slate-950 hover:shadow-lg hover:shadow-slate-200/60 dark:border-slate-800 dark:bg-slate-900/80 dark:text-slate-300 dark:hover:border-teal-400 dark:hover:bg-slate-900 dark:hover:text-white'
+                    ? 'border-teal-700 bg-teal-700 text-white shadow-lg shadow-teal-900/15'
+                    : 'border-slate-200 bg-white text-slate-600 shadow-sm hover:border-teal-300 hover:text-slate-950 hover:shadow-md dark:border-slate-800 dark:bg-slate-950 dark:text-slate-300 dark:hover:border-teal-500/50 dark:hover:text-white'
             }`}
         >
             <span
-                className={`flex h-7 w-7 items-center justify-center border ${
+                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-xl transition-colors ${
                     active
-                        ? 'border-white/20 bg-white/10 dark:border-slate-950/15 dark:bg-slate-950/10'
-                        : 'border-slate-200 bg-slate-50 text-teal-700 dark:border-slate-800 dark:bg-slate-950 dark:text-teal-300'
+                        ? 'bg-white/15 text-white'
+                        : 'bg-slate-50 text-slate-500 group-hover/filter:bg-teal-50 group-hover/filter:text-teal-700 dark:bg-slate-900 dark:text-slate-300'
                 }`}
             >
-                <Icon className="h-4 w-4" />
+                <Icon className="h-[18px] w-[18px]" />
             </span>
-            <span>
-                <span className="block text-[10px] font-black uppercase tracking-[0.18em]">{label}</span>
-                <span className={`mt-0.5 block text-[10px] font-bold uppercase tracking-[0.12em] ${active ? 'text-white/65 dark:text-slate-950/60' : 'text-slate-400'}`}>
-                    {count} {count === 1 ? 'project' : 'projects'}
-                </span>
-            </span>
+            <span className="whitespace-nowrap">{label}</span>
         </button>
     )
 }
 
 interface ProjectPortfolioFiltersProps {
+    categories: ProjectCategoryOption[]
     category: ProjectCategoryFilter
-    categoryCounts: Record<ProjectCategoryFilter, number>
-    filteredCount: number
     onCategoryChange: (category: ProjectCategoryFilter) => void
+    onClearFilters: () => void
+    onSearchChange: (value: string) => void
     onStatusChange: (status: ProjectStatusFilter) => void
+    searchQuery: string
     status: ProjectStatusFilter
-    statusCounts: Record<ProjectStatusFilter, number>
 }
 
 export function ProjectPortfolioFilters({
+    categories,
     category,
-    categoryCounts,
-    filteredCount,
     onCategoryChange,
+    onClearFilters,
+    onSearchChange,
     onStatusChange,
+    searchQuery,
     status,
-    statusCounts,
 }: ProjectPortfolioFiltersProps) {
+    const activeFilters = category !== 'All' || status !== 'All' || searchQuery.trim().length > 0
+    const activeCategoryLabel = category === 'All' ? 'All sectors' : category
+
     return (
-        <div className="mb-10 overflow-hidden border border-slate-200 bg-white/95 shadow-[0_28px_90px_rgba(15,23,42,0.08)] backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
-            <div className="grid lg:grid-cols-[1.15fr_0.85fr]">
-                <div className="relative p-7 md:p-10">
-                    <div className="absolute right-0 top-0 hidden h-full w-px bg-slate-200 dark:bg-slate-800 lg:block" />
-                    <div className="mb-6 inline-flex items-center gap-2 border border-teal-200 bg-teal-50 px-4 py-2 text-[10px] font-black uppercase tracking-[0.26em] text-teal-800 dark:border-teal-500/20 dark:bg-teal-500/10 dark:text-teal-300">
-                        <Sparkles className="h-4 w-4" />
-                        Portfolio intelligence
-                    </div>
-                    <h2 className="max-w-3xl text-4xl font-display font-bold tracking-tight text-slate-950 dark:text-white md:text-6xl">
-                        Explore work by scale, sector, and delivery status.
-                    </h2>
-                    <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300">
-                        A case-study portfolio built for executive scanning, technical review, and quick comparison across active and completed work.
-                    </p>
-                </div>
+        <div className="rounded-[28px] border border-slate-200 bg-white/90 p-4 shadow-[0_18px_60px_rgba(15,23,42,0.07)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/80 md:p-5">
+            <div className="grid gap-4">
+                <div className="grid gap-3 lg:grid-cols-[minmax(260px,420px)_1fr] lg:items-center">
+                    <label className="relative block min-w-0">
+                        <span className="sr-only">Search projects</span>
+                        <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
+                        <input
+                            value={searchQuery}
+                            onChange={(event) => onSearchChange(event.target.value)}
+                            placeholder="Search projects, locations, clients..."
+                            className="h-14 w-full rounded-2xl border border-slate-200 bg-slate-50 pl-12 pr-4 text-sm font-bold text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-500/10 dark:border-slate-800 dark:bg-slate-900 dark:text-white dark:focus:border-teal-500"
+                        />
+                    </label>
 
-                <div className="grid border-t border-slate-200 dark:border-slate-800 lg:border-t-0">
-                    <div className="grid grid-cols-3">
-                        <div className="border-r border-slate-200 p-6 dark:border-slate-800">
-                            <div className="text-3xl font-display font-bold text-slate-950 dark:text-white">{filteredCount}</div>
-                            <div className="mt-2 text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">Visible Cases</div>
-                        </div>
-                        <div className="border-r border-slate-200 p-6 dark:border-slate-800">
-                            <div className="truncate text-3xl font-display font-bold text-slate-950 dark:text-white">{category === 'All' ? 'All' : category}</div>
-                            <div className="mt-2 text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">Discipline</div>
-                        </div>
-                        <div className="p-6">
-                            <div className="truncate text-3xl font-display font-bold text-slate-950 dark:text-white">{status === 'All' ? 'Live' : status}</div>
-                            <div className="mt-2 text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">Status View</div>
-                        </div>
-                    </div>
-                    <div className="border-t border-slate-200 bg-slate-950 p-6 text-white dark:border-slate-800">
-                        <div className="flex items-start gap-4">
-                            <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-teal-500 text-slate-950">
-                                <Hammer className="h-6 w-6" />
-                            </div>
-                            <div>
-                                <div className="text-[10px] font-black uppercase tracking-[0.22em] text-teal-300">Selected lens</div>
-                                <p className="mt-2 text-sm leading-7 text-slate-300">
-                                    Showing {status === 'All' ? 'all delivery statuses' : status.toLowerCase()} within {category === 'All' ? 'the full portfolio' : `${category.toLowerCase()} projects`}.
-                                </p>
+                    <div className="flex min-w-0 items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 dark:border-slate-800 dark:bg-slate-900/50">
+                        <div className="min-w-0">
+                            <div className="text-[10px] font-black uppercase tracking-[0.22em] text-slate-400">Current View</div>
+                            <div className="mt-1 truncate text-sm font-black text-slate-900 dark:text-white">
+                                {activeCategoryLabel} / {status === 'All' ? 'All statuses' : status}
                             </div>
                         </div>
+                        {activeFilters && (
+                            <button
+                                type="button"
+                                onClick={onClearFilters}
+                                className="inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 text-xs font-black uppercase tracking-wider text-slate-500 shadow-sm transition-colors hover:border-teal-300 hover:text-teal-700 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-300"
+                            >
+                                <X className="h-4 w-4" />
+                                Clear
+                            </button>
+                        )}
                     </div>
                 </div>
-            </div>
 
-            <div className="border-t border-slate-200 p-5 dark:border-slate-800 md:p-6">
-                <div className="mb-4 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.22em] text-slate-400">
-                    <Filter className="h-4 w-4 text-teal-600" />
-                    Browse by discipline
-                </div>
-                <div className="flex gap-3 overflow-x-auto pb-2">
-                    {CATEGORY_FILTERS.map((item) => {
-                        const meta = CATEGORY_META[item]
-                        return (
-                            <FilterButton
-                                key={item}
-                                label={meta.label}
-                                icon={meta.icon}
-                                count={categoryCounts[item]}
-                                active={category === item}
-                                onClick={() => onCategoryChange(item)}
+                <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_minmax(330px,430px)] xl:items-start">
+                    <section className="min-w-0 rounded-[24px] border border-slate-200 bg-slate-50/80 p-3 dark:border-slate-800 dark:bg-slate-900/50">
+                        <div className="mb-3 flex items-center justify-between gap-4 px-1">
+                            <span className="text-[10px] font-black uppercase tracking-[0.22em] text-slate-400">Project Type</span>
+                            <span className="max-w-[55%] truncate rounded-full bg-white px-3 py-1 text-[10px] font-black uppercase tracking-wider text-teal-700 shadow-sm dark:bg-slate-950">
+                                {activeCategoryLabel}
+                            </span>
+                        </div>
+                        <div className="portfolio-filter-scroll flex max-w-full gap-2 overflow-x-auto px-1 pb-5 pt-1">
+                            <CommandButton
+                                label="All Projects"
+                                icon={SlidersHorizontal}
+                                active={category === 'All'}
+                                onClick={() => onCategoryChange('All')}
                             />
-                        )
-                    })}
-                </div>
-                <div className="mt-4 flex gap-3 overflow-x-auto pb-1">
-                    {STATUS_FILTERS.map((item) => {
-                        const meta = STATUS_META[item]
-                        return (
-                            <FilterButton
-                                key={item}
-                                label={meta.label}
-                                icon={meta.icon}
-                                count={statusCounts[item]}
-                                active={status === item}
-                                onClick={() => onStatusChange(item)}
-                            />
-                        )
-                    })}
+                            {categories.map((item) => (
+                                <CommandButton
+                                    key={item._id || item.slug || item.name}
+                                    label={item.name}
+                                    icon={getCategoryIcon(item)}
+                                    active={category === item.name}
+                                    onClick={() => onCategoryChange(item.name)}
+                                />
+                            ))}
+                        </div>
+                    </section>
+
+                    <section className="rounded-[24px] border border-slate-200 bg-slate-50/80 p-3 dark:border-slate-800 dark:bg-slate-900/50">
+                        <div className="mb-3 flex items-center justify-between gap-4 px-1">
+                            <span className="text-[10px] font-black uppercase tracking-[0.22em] text-slate-400">Delivery Status</span>
+                            <span className="rounded-full bg-white px-3 py-1 text-[10px] font-black uppercase tracking-wider text-teal-700 shadow-sm dark:bg-slate-950">
+                                {status === 'All' ? 'All' : status}
+                            </span>
+                        </div>
+                        <div className="grid grid-cols-3 gap-2">
+                            {STATUS_FILTERS.map((item) => {
+                                const meta = STATUS_META[item]
+                                return (
+                                    <button
+                                        key={item}
+                                        type="button"
+                                        onClick={() => onStatusChange(item)}
+                                        className={`flex h-12 min-w-0 items-center justify-center gap-2 rounded-2xl px-2 text-xs font-black transition-all duration-300 md:h-14 ${
+                                            status === item
+                                                ? 'bg-teal-700 text-white shadow-lg shadow-teal-900/15'
+                                                : 'bg-white text-slate-600 hover:text-slate-950 dark:bg-slate-950 dark:text-slate-300 dark:hover:text-white'
+                                        }`}
+                                    >
+                                        <meta.icon className="h-4 w-4 shrink-0" />
+                                        <span className="min-w-0 truncate">{meta.label}</span>
+                                    </button>
+                                )
+                            })}
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>

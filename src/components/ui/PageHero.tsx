@@ -1,5 +1,5 @@
 import { Image } from './Image'
-import { motion } from 'framer-motion'
+import { heroVisualFallback } from '@/lib/visualFallbacks'
 
 interface PageHeroProps {
     title: string | React.ReactNode;
@@ -10,32 +10,25 @@ interface PageHeroProps {
 
 export function PageHero({ title, description, imageSrc, imageAlt }: PageHeroProps) {
     return (
-        <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+        <section className="relative flex h-[58vh] min-h-[460px] items-center justify-center overflow-hidden md:min-h-[560px]">
             <div className="absolute inset-0">
                 <Image 
                     src={imageSrc} 
                     alt={imageAlt} 
-                    className="w-full h-full object-cover object-center"
+                    fallbackSrc={heroVisualFallback}
+                    fallbackClassName="bg-slate-950 object-cover p-0"
+                    className="h-full w-full object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-navy-900/90 via-navy-900/70 to-navy-900/90" />
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/55 to-slate-950/86" />
+                <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white via-white/60 to-transparent dark:from-slate-950 dark:via-slate-950/70" />
             </div>
-            <div className="relative z-10 text-center px-6 max-w-4xl mx-auto mt-20">
-                <motion.h1 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="text-4xl md:text-6xl font-display font-bold text-white mb-6 leading-tight"
-                >
+            <div className="relative z-10 mx-auto mt-16 max-w-5xl px-6 text-center">
+                <h1 className="mb-6 text-4xl font-bold leading-tight text-white md:text-6xl">
                     {title}
-                </motion.h1>
-                <motion.p 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-                    className="text-lg md:text-xl text-teal-50/80 max-w-2xl mx-auto font-sans font-light leading-relaxed"
-                >
+                </h1>
+                <p className="mx-auto max-w-2xl text-lg font-light leading-relaxed text-teal-50/85 md:text-xl">
                     {description}
-                </motion.p>
+                </p>
             </div>
         </section>
     )
