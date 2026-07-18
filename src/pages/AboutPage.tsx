@@ -5,6 +5,8 @@ import { useQuery } from '@tanstack/react-query'
 import { apiFetch } from '@/lib/apiClient'
 import { usePageContent } from '@/hooks/usePageContent'
 import { ReactNode } from 'react'
+import { SeoHead } from '@/components/SeoHead'
+import { seoProfiles } from '@/lib/seo'
 
 function EmptyState({ icon: Icon, title, description }: { icon?: any, title: string, description?: string }) {
   return (
@@ -77,6 +79,7 @@ export default function AboutPage() {
 
     return (
         <div className="flex flex-col w-full">
+            <SeoHead profile={seoProfiles.about} />
             <PageHero 
                 title={hero?.title || <>Two Decades of Building <span className="text-teal-500">Malawi's Future</span></>}
                 description={hero?.description || "Since 2006, Fortune Construction has been a cornerstone of infrastructure development, delivering excellence through engineering precision and unwavering commitment to safety."}

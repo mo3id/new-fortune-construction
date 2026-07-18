@@ -15,6 +15,7 @@ export function PageHero({ title, description, imageSrc, imageAlt }: PageHeroPro
                 <Image 
                     src={imageSrc} 
                     alt={imageAlt} 
+                    loading="eager"
                     fallbackSrc={heroVisualFallback}
                     fallbackClassName="bg-slate-950 object-cover p-0"
                     className="h-full w-full object-cover object-center"

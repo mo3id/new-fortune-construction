@@ -14,13 +14,23 @@ import {
     ProjectCategoryOption,
     ProjectStatusFilter,
 } from '@/components/projects/portfolioConfig'
+import { SeoHead } from '@/components/SeoHead'
+import { seoProfiles } from '@/lib/seo'
+import { DataUnavailableState } from '@/components/errors/DataUnavailableState'
+import { isNetworkUnavailableError } from '@/lib/errorHandling'
 
 export default function ProjectsPage() {
     const [category, setCategory] = useState<ProjectCategoryFilter>('All')
     const [status, setStatus] = useState<ProjectStatusFilter>('All')
     const [searchQuery, setSearchQuery] = useState('')
 
-    const { data: apiProjects, isLoading } = useQuery<RawProject[]>({
+    const {
+        data: apiProjects,
+        error: projectsError,
+        isError: projectsHasError,
+        isLoading,
+        refetch: retryProjects,
+    } = useQuery<RawProject[]>({
         queryKey: ['projects'],
         queryFn: () => apiFetch<RawProject[]>('/projects'),
         staleTime: 60_000,
@@ -31,7 +41,12 @@ export default function ProjectsPage() {
         [apiProjects],
     )
 
-    const { data: apiCategories } = useQuery<ProjectCategoryOption[]>({
+    const {
+        data: apiCategories,
+        error: categoriesError,
+        isError: categoriesHasError,
+        refetch: retryCategories,
+    } = useQuery<ProjectCategoryOption[]>({
         queryKey: ['project-categories'],
         queryFn: () => apiFetch<ProjectCategoryOption[]>('/project-categories'),
         staleTime: 60_000,
@@ -96,8 +111,12 @@ export default function ProjectsPage() {
         },
     ]
 
+    const projectsUnavailable = projectsHasError && isNetworkUnavailableError(projectsError)
+    const categoriesUnavailable = categoriesHasError && isNetworkUnavailableError(categoriesError)
+
     return (
         <div className="flex min-h-screen w-full flex-col bg-white dark:bg-slate-950">
+            <SeoHead profile={seoProfiles.projects} />
             <PageHero
                 title="Project Portfolio"
                 description="A premium view of Fortune Construction's infrastructure, building, and civil works across Malawi."
@@ -122,6 +141,23 @@ export default function ProjectsPage() {
 
                 <div className="mx-auto grid max-w-[1800px] gap-10 xl:grid-cols-[minmax(0,1fr)_500px]">
                     <main>
+                        {(projectsUnavailable || categoriesUnavailable) && (
+                            <DataUnavailableState
+                                className="mb-8"
+                                error={projectsUnavailable ? projectsError : categoriesError}
+                                message={
+                                    projectsUnavailable
+                                        ? 'Live project data is temporarily unavailable. Showing saved portfolio content until the service responds.'
+                                        : 'Project category filters are temporarily unavailable. Showing default filters until the service responds.'
+                                }
+                                onRetry={() => {
+                                    if (projectsUnavailable) void retryProjects()
+                                    if (categoriesUnavailable) void retryCategories()
+                                }}
+                                resourceLabel={projectsUnavailable ? 'project data' : 'project filters'}
+                                title={projectsUnavailable ? 'Project data temporarily unavailable' : 'Project filters temporarily unavailable'}
+                            />
+                        )}
                         <ProjectPortfolioFilters
                             categories={categories}
                             category={category}

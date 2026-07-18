@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /login
+Disallow: /admin
+Disallow: /api
+Disallow: /private
+Disallow: /management
+
+Sitemap: https://fortuneconstruction.mw/sitemap.xml

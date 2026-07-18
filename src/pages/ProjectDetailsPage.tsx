@@ -20,6 +20,10 @@ import type { LucideIcon } from 'lucide-react'
 import { useQuery } from '@tanstack/react-query'
 import { apiFetch } from '@/lib/apiClient'
 import { fallbackProjects, normalizeProject, ProjectRecord, RawProject } from '@/lib/projectPresentation'
+import { SeoHead } from '@/components/SeoHead'
+import { projectSeoProfile, seoProfiles } from '@/lib/seo'
+import { DataUnavailableState } from '@/components/errors/DataUnavailableState'
+import { isNetworkUnavailableError } from '@/lib/errorHandling'
 import Lightbox from 'react-18-image-lightbox'
 import 'react-18-image-lightbox/style.css'
 
@@ -90,7 +94,7 @@ export default function ProjectDetailsPage() {
     const [photoIndex, setPhotoIndex] = useState(0)
 
     const localProject = resolveLocalProject(id)
-    const { data: apiProject, isLoading, isError } = useQuery<RawProject>({
+    const { data: apiProject, error, isLoading, isError, refetch } = useQuery<RawProject>({
         queryKey: ['project', id],
         queryFn: () => apiFetch<RawProject>(`/projects/${id}`),
         enabled: !!id && !localProject,
@@ -108,9 +112,29 @@ export default function ProjectDetailsPage() {
         </div>
     )
 
+    if (isError && isNetworkUnavailableError(error)) {
+        return (
+            <div className="flex min-h-screen w-full flex-col bg-slate-50 px-6 py-16 dark:bg-slate-950">
+                <SeoHead profile={seoProfiles.appError} />
+                <main className="mx-auto flex w-full max-w-4xl flex-1 flex-col justify-center">
+                    <DataUnavailableState
+                        error={error}
+                        onRetry={() => void refetch()}
+                        resourceLabel="project details"
+                        title="Project details temporarily unavailable"
+                    />
+                    <Link to="/projects" className="mt-6 inline-flex items-center self-start text-sm font-bold text-teal-700 dark:text-teal-300">
+                        <ArrowLeft className="mr-2 h-5 w-5" /> Back to Projects
+                    </Link>
+                </main>
+            </div>
+        )
+    }
+
     if (isError || !project) {
         return (
             <div className="flex min-h-[60vh] flex-col items-center justify-center bg-slate-50 px-6 text-center dark:bg-slate-950">
+                <SeoHead profile={projectSeoProfile(undefined, id)} />
                 <h1 className="mb-4 text-3xl font-display font-bold text-slate-950 dark:text-white">Project Not Found</h1>
                 <Link to="/projects" className="inline-flex items-center bg-teal-600 px-6 py-3 text-sm font-black uppercase tracking-[0.18em] text-white">
                     <ArrowLeft className="mr-2 h-5 w-5" /> Back to Projects
@@ -120,9 +144,11 @@ export default function ProjectDetailsPage() {
     }
 
     const images = project.galleryImages.length ? project.galleryImages : [project.coverImage]
+    const seoProfile = projectSeoProfile(project, id)
 
     return (
         <div className="flex min-h-screen w-full flex-col bg-white dark:bg-slate-950">
+            <SeoHead profile={seoProfile} />
             <PageHero
                 title={project.title}
                 description={`${project.category} case study in ${project.location}`}

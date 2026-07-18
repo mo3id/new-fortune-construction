@@ -14,17 +14,24 @@ function getYouTubeEmbedUrl(url: string): string {
 
 export function VideoBackground({ currentIndex, videos }: Props) {
     const srcs = videos?.length ? videos : HERO_VIDEOS
+    const nextIndex = srcs.length ? (currentIndex + 1) % srcs.length : 0
+
     return (
         <div className="absolute inset-0 z-0">
             {srcs.map((src, index) => {
                 const isYT = isYouTubeUrl(src)
+                const isActive = index === currentIndex
+                const shouldWarmVideo = !isYT && index === nextIndex
+                const shouldRender = isActive || shouldWarmVideo
+                if (!shouldRender) return null
+
                 return isYT ? (
                     <iframe
                         key={src}
-                        src={getYouTubeEmbedUrl(src)}
+                        src={isActive ? getYouTubeEmbedUrl(src) : undefined}
                         className={cn(
                             'absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 pointer-events-none',
-                            index === currentIndex ? 'opacity-100' : 'opacity-0'
+                            isActive ? 'opacity-100' : 'opacity-0'
                         )}
                         allow="autoplay; encrypted-media"
                         allowFullScreen
@@ -35,12 +42,13 @@ export function VideoBackground({ currentIndex, videos }: Props) {
                         key={src}
                         className={cn(
                             'absolute inset-0 w-full h-full object-cover transition-opacity duration-1000',
-                            index === currentIndex ? 'opacity-100' : 'opacity-0'
+                            isActive ? 'opacity-100' : 'opacity-0'
                         )}
-                        autoPlay
+                        autoPlay={isActive}
                         muted
                         loop
                         playsInline
+                        preload={isActive ? 'auto' : 'metadata'}
                     >
                         <source src={src} type="video/mp4" />
                     </video>

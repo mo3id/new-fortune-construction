@@ -1,0 +1,600 @@
+[
+  {
+    "route": "/",
+    "viewport": "desktop",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/005-public-seo-improvements/evidence/T037-home-desktop.png",
+    "metadata": {
+      "title": "Fortune Construction | Malawi Construction & Civil Engineering",
+      "description": "Fortune Construction delivers civil engineering, infrastructure, buildings, bridges, and project management services across Malawi.",
+      "canonical": "https://fortuneconstruction.mw/",
+      "robots": "index,follow",
+      "ogTitle": "Fortune Construction | Malawi Construction & Civil Engineering",
+      "ogDescription": "Fortune Construction delivers civil engineering, infrastructure, buildings, bridges, and project management services across Malawi.",
+      "twitterTitle": "Fortune Construction | Malawi Construction & Civil Engineering",
+      "jsonLdCount": 0,
+      "pageHorizontalScroll": false,
+      "actionOverflow": []
+    },
+    "consoleErrors": [
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "failedRequests": [
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/content/home :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/services :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/partners :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/projects :: net::ERR_CONNECTION_REFUSED",
+      "GET https://images.unsplash.com/photo-1545558014-8ab6aa17e307?q=80&w=1200&auto=format&fit=crop :: net::ERR_BLOCKED_BY_ORB",
+      "GET https://images.unsplash.com/photo-1590486803622-92fd0d97034c?q=80&w=1200&auto=format&fit=crop :: net::ERR_BLOCKED_BY_ORB",
+      "GET https://images.unsplash.com/photo-1541888086925-920a0f6707dd?q=80&w=2000&auto=format&fit=crop&fm=webp :: net::ERR_BLOCKED_BY_ORB",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/content/home :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/services :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/partners :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/projects :: net::ERR_CONNECTION_REFUSED"
+    ],
+    "missing": [],
+    "pass": true
+  },
+  {
+    "route": "/projects",
+    "viewport": "desktop",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/005-public-seo-improvements/evidence/T037-projects-desktop.png",
+    "metadata": {
+      "title": "Project Portfolio | Fortune Construction Malawi",
+      "description": "Explore Fortune Construction case studies across roads, bridges, buildings, infrastructure, and commercial projects in Malawi.",
+      "canonical": "https://fortuneconstruction.mw/projects",
+      "robots": "index,follow",
+      "ogTitle": "Project Portfolio | Fortune Construction Malawi",
+      "ogDescription": "Explore Fortune Construction case studies across roads, bridges, buildings, infrastructure, and commercial projects in Malawi.",
+      "twitterTitle": "Project Portfolio | Fortune Construction Malawi",
+      "jsonLdCount": 0,
+      "pageHorizontalScroll": false,
+      "actionOverflow": []
+    },
+    "consoleErrors": [
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "failedRequests": [
+      "GET http://localhost:3001/api/projects :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/project-categories :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED",
+      "GET https://images.unsplash.com/photo-1545558014-8ab6aa17e307?q=80&w=2200&auto=format&fit=crop&fm=webp :: net::ERR_BLOCKED_BY_ORB",
+      "GET http://localhost:3001/api/projects :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/project-categories :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED"
+    ],
+    "missing": [],
+    "pass": true
+  },
+  {
+    "route": "/projects/1",
+    "viewport": "desktop",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/005-public-seo-improvements/evidence/T037-projects-1-desktop.png",
+    "metadata": {
+      "title": "Lilongwe Grand Bridge | Fortune Construction Case Study",
+      "description": "A bridges project delivered with Fortune Construction's disciplined approach to quality, safety, and practical engineering outcomes.",
+      "canonical": "https://fortuneconstruction.mw/projects/1",
+      "robots": "index,follow",
+      "ogTitle": "Lilongwe Grand Bridge | Fortune Construction Case Study",
+      "ogDescription": "A bridges project delivered with Fortune Construction's disciplined approach to quality, safety, and practical engineering outcomes.",
+      "twitterTitle": "Lilongwe Grand Bridge | Fortune Construction Case Study",
+      "jsonLdCount": 0,
+      "pageHorizontalScroll": false,
+      "actionOverflow": []
+    },
+    "consoleErrors": [
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "failedRequests": [
+      "GET https://images.unsplash.com/photo-1545558014-8ab6aa17e307?q=80&w=1200&auto=format&fit=crop :: net::ERR_BLOCKED_BY_ORB",
+      "GET https://images.unsplash.com/photo-1590486803622-92fd0d97034c?q=80&w=800&auto=format&fit=crop :: net::ERR_BLOCKED_BY_ORB",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED",
+      "GET https://images.unsplash.com/photo-1541888086925-920a0f6707dd?q=80&w=800&auto=format&fit=crop :: net::ERR_BLOCKED_BY_ORB",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED"
+    ],
+    "missing": [],
+    "pass": true
+  },
+  {
+    "route": "/services",
+    "viewport": "desktop",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/005-public-seo-improvements/evidence/T037-services-desktop.png",
+    "metadata": {
+      "title": "Construction Services | Fortune Construction Malawi",
+      "description": "Review Fortune Construction services for roads, infrastructure, commercial buildings, bridges, structural works, and project delivery.",
+      "canonical": "https://fortuneconstruction.mw/services",
+      "robots": "index,follow",
+      "ogTitle": "Construction Services | Fortune Construction Malawi",
+      "ogDescription": "Review Fortune Construction services for roads, infrastructure, commercial buildings, bridges, structural works, and project delivery.",
+      "twitterTitle": "Construction Services | Fortune Construction Malawi",
+      "jsonLdCount": 0,
+      "pageHorizontalScroll": false,
+      "actionOverflow": []
+    },
+    "consoleErrors": [
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "failedRequests": [
+      "GET http://localhost:3001/api/services :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/services :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED"
+    ],
+    "missing": [],
+    "pass": true
+  },
+  {
+    "route": "/contact",
+    "viewport": "desktop",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/005-public-seo-improvements/evidence/T037-contact-desktop.png",
+    "metadata": {
+      "title": "Contact Fortune Construction | Project Consultation in Malawi",
+      "description": "Contact Fortune Construction for infrastructure, building, civil engineering, and project consultation inquiries in Malawi.",
+      "canonical": "https://fortuneconstruction.mw/contact",
+      "robots": "index,follow",
+      "ogTitle": "Contact Fortune Construction | Project Consultation in Malawi",
+      "ogDescription": "Contact Fortune Construction for infrastructure, building, civil engineering, and project consultation inquiries in Malawi.",
+      "twitterTitle": "Contact Fortune Construction | Project Consultation in Malawi",
+      "jsonLdCount": 0,
+      "pageHorizontalScroll": false,
+      "actionOverflow": []
+    },
+    "consoleErrors": [
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "failedRequests": [
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/content/contact :: net::ERR_CONNECTION_REFUSED",
+      "GET https://images.unsplash.com/photo-1545558014-8ab6aa17e307?q=80&w=2000&auto=format&fit=crop&fm=webp :: net::ERR_BLOCKED_BY_ORB",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/content/contact :: net::ERR_CONNECTION_REFUSED"
+    ],
+    "missing": [],
+    "pass": true
+  },
+  {
+    "route": "/about",
+    "viewport": "desktop",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/005-public-seo-improvements/evidence/T037-about-desktop.png",
+    "metadata": {
+      "title": "About Fortune Construction | Building Malawi Since 2006",
+      "description": "Learn about Fortune Construction's engineering heritage, safety culture, leadership, and infrastructure work across Malawi.",
+      "canonical": "https://fortuneconstruction.mw/about",
+      "robots": "index,follow",
+      "ogTitle": "About Fortune Construction | Building Malawi Since 2006",
+      "ogDescription": "Learn about Fortune Construction's engineering heritage, safety culture, leadership, and infrastructure work across Malawi.",
+      "twitterTitle": "About Fortune Construction | Building Malawi Since 2006",
+      "jsonLdCount": 0,
+      "pageHorizontalScroll": false,
+      "actionOverflow": []
+    },
+    "consoleErrors": [
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "failedRequests": [
+      "GET http://localhost:3001/api/team :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/content/about :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED",
+      "GET https://images.unsplash.com/photo-1541888086925-920a0f6707dd?q=80&w=2000&auto=format&fit=crop&fm=webp :: net::ERR_BLOCKED_BY_ORB",
+      "GET http://localhost:3001/api/team :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/content/about :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED"
+    ],
+    "missing": [],
+    "pass": true
+  },
+  {
+    "route": "/hse",
+    "viewport": "desktop",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/005-public-seo-improvements/evidence/T037-hse-desktop.png",
+    "metadata": {
+      "title": "Health, Safety & Quality | Fortune Construction",
+      "description": "See how Fortune Construction manages health, safety, environment, quality assurance, and certifications across construction projects.",
+      "canonical": "https://fortuneconstruction.mw/hse",
+      "robots": "index,follow",
+      "ogTitle": "Health, Safety & Quality | Fortune Construction",
+      "ogDescription": "See how Fortune Construction manages health, safety, environment, quality assurance, and certifications across construction projects.",
+      "twitterTitle": "Health, Safety & Quality | Fortune Construction",
+      "jsonLdCount": 0,
+      "pageHorizontalScroll": false,
+      "actionOverflow": []
+    },
+    "consoleErrors": [
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "failedRequests": [
+      "GET http://localhost:3001/api/partners :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/content/hse :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED",
+      "GET https://images.unsplash.com/photo-1541888086925-920a0f6707dd?q=80&w=2000&auto=format&fit=crop&fm=webp :: net::ERR_BLOCKED_BY_ORB",
+      "GET http://localhost:3001/api/partners :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/content/hse :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED"
+    ],
+    "missing": [],
+    "pass": true
+  },
+  {
+    "route": "/careers",
+    "viewport": "desktop",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/005-public-seo-improvements/evidence/T037-careers-desktop.png",
+    "metadata": {
+      "title": "Careers | Join Fortune Construction Malawi",
+      "description": "Find construction, engineering, project management, and HSE career opportunities with Fortune Construction in Malawi.",
+      "canonical": "https://fortuneconstruction.mw/careers",
+      "robots": "index,follow",
+      "ogTitle": "Careers | Join Fortune Construction Malawi",
+      "ogDescription": "Find construction, engineering, project management, and HSE career opportunities with Fortune Construction in Malawi.",
+      "twitterTitle": "Careers | Join Fortune Construction Malawi",
+      "jsonLdCount": 0,
+      "pageHorizontalScroll": false,
+      "actionOverflow": []
+    },
+    "consoleErrors": [
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "failedRequests": [
+      "GET http://localhost:3001/api/jobs :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/content/careers :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED",
+      "GET https://images.unsplash.com/photo-1541888086925-920a0f6707dd?q=80&w=2000&auto=format&fit=crop&fm=webp :: net::ERR_BLOCKED_BY_ORB",
+      "GET http://localhost:3001/api/jobs :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/content/careers :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED"
+    ],
+    "missing": [],
+    "pass": true
+  },
+  {
+    "route": "/",
+    "viewport": "mobile",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/005-public-seo-improvements/evidence/T037-home-mobile.png",
+    "metadata": {
+      "title": "Fortune Construction | Malawi Construction & Civil Engineering",
+      "description": "Fortune Construction delivers civil engineering, infrastructure, buildings, bridges, and project management services across Malawi.",
+      "canonical": "https://fortuneconstruction.mw/",
+      "robots": "index,follow",
+      "ogTitle": "Fortune Construction | Malawi Construction & Civil Engineering",
+      "ogDescription": "Fortune Construction delivers civil engineering, infrastructure, buildings, bridges, and project management services across Malawi.",
+      "twitterTitle": "Fortune Construction | Malawi Construction & Civil Engineering",
+      "jsonLdCount": 0,
+      "pageHorizontalScroll": false,
+      "actionOverflow": []
+    },
+    "consoleErrors": [
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "failedRequests": [
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/content/home :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/services :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/partners :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/projects :: net::ERR_CONNECTION_REFUSED",
+      "GET https://images.unsplash.com/photo-1545558014-8ab6aa17e307?q=80&w=1200&auto=format&fit=crop :: net::ERR_BLOCKED_BY_ORB",
+      "GET https://images.unsplash.com/photo-1590486803622-92fd0d97034c?q=80&w=1200&auto=format&fit=crop :: net::ERR_BLOCKED_BY_ORB",
+      "GET https://images.unsplash.com/photo-1541888086925-920a0f6707dd?q=80&w=2000&auto=format&fit=crop&fm=webp :: net::ERR_BLOCKED_BY_ORB",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/content/home :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/services :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/partners :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/projects :: net::ERR_CONNECTION_REFUSED"
+    ],
+    "missing": [],
+    "pass": true
+  },
+  {
+    "route": "/projects",
+    "viewport": "mobile",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/005-public-seo-improvements/evidence/T037-projects-mobile.png",
+    "metadata": {
+      "title": "Project Portfolio | Fortune Construction Malawi",
+      "description": "Explore Fortune Construction case studies across roads, bridges, buildings, infrastructure, and commercial projects in Malawi.",
+      "canonical": "https://fortuneconstruction.mw/projects",
+      "robots": "index,follow",
+      "ogTitle": "Project Portfolio | Fortune Construction Malawi",
+      "ogDescription": "Explore Fortune Construction case studies across roads, bridges, buildings, infrastructure, and commercial projects in Malawi.",
+      "twitterTitle": "Project Portfolio | Fortune Construction Malawi",
+      "jsonLdCount": 0,
+      "pageHorizontalScroll": false,
+      "actionOverflow": []
+    },
+    "consoleErrors": [
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "failedRequests": [
+      "GET http://localhost:3001/api/projects :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/project-categories :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED",
+      "GET https://images.unsplash.com/photo-1545558014-8ab6aa17e307?q=80&w=2200&auto=format&fit=crop&fm=webp :: net::ERR_BLOCKED_BY_ORB",
+      "GET http://localhost:3001/api/projects :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/project-categories :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED"
+    ],
+    "missing": [],
+    "pass": true
+  },
+  {
+    "route": "/projects/1",
+    "viewport": "mobile",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/005-public-seo-improvements/evidence/T037-projects-1-mobile.png",
+    "metadata": {
+      "title": "Lilongwe Grand Bridge | Fortune Construction Case Study",
+      "description": "A bridges project delivered with Fortune Construction's disciplined approach to quality, safety, and practical engineering outcomes.",
+      "canonical": "https://fortuneconstruction.mw/projects/1",
+      "robots": "index,follow",
+      "ogTitle": "Lilongwe Grand Bridge | Fortune Construction Case Study",
+      "ogDescription": "A bridges project delivered with Fortune Construction's disciplined approach to quality, safety, and practical engineering outcomes.",
+      "twitterTitle": "Lilongwe Grand Bridge | Fortune Construction Case Study",
+      "jsonLdCount": 0,
+      "pageHorizontalScroll": false,
+      "actionOverflow": []
+    },
+    "consoleErrors": [
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "failedRequests": [
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED",
+      "GET https://images.unsplash.com/photo-1545558014-8ab6aa17e307?q=80&w=1200&auto=format&fit=crop :: net::ERR_BLOCKED_BY_ORB",
+      "GET https://images.unsplash.com/photo-1590486803622-92fd0d97034c?q=80&w=800&auto=format&fit=crop :: net::ERR_BLOCKED_BY_ORB",
+      "GET https://images.unsplash.com/photo-1541888086925-920a0f6707dd?q=80&w=800&auto=format&fit=crop :: net::ERR_BLOCKED_BY_ORB",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED"
+    ],
+    "missing": [],
+    "pass": true
+  },
+  {
+    "route": "/services",
+    "viewport": "mobile",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/005-public-seo-improvements/evidence/T037-services-mobile.png",
+    "metadata": {
+      "title": "Construction Services | Fortune Construction Malawi",
+      "description": "Review Fortune Construction services for roads, infrastructure, commercial buildings, bridges, structural works, and project delivery.",
+      "canonical": "https://fortuneconstruction.mw/services",
+      "robots": "index,follow",
+      "ogTitle": "Construction Services | Fortune Construction Malawi",
+      "ogDescription": "Review Fortune Construction services for roads, infrastructure, commercial buildings, bridges, structural works, and project delivery.",
+      "twitterTitle": "Construction Services | Fortune Construction Malawi",
+      "jsonLdCount": 0,
+      "pageHorizontalScroll": false,
+      "actionOverflow": []
+    },
+    "consoleErrors": [
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "failedRequests": [
+      "GET http://localhost:3001/api/services :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/services :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED"
+    ],
+    "missing": [],
+    "pass": true
+  },
+  {
+    "route": "/contact",
+    "viewport": "mobile",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/005-public-seo-improvements/evidence/T037-contact-mobile.png",
+    "metadata": {
+      "title": "Contact Fortune Construction | Project Consultation in Malawi",
+      "description": "Contact Fortune Construction for infrastructure, building, civil engineering, and project consultation inquiries in Malawi.",
+      "canonical": "https://fortuneconstruction.mw/contact",
+      "robots": "index,follow",
+      "ogTitle": "Contact Fortune Construction | Project Consultation in Malawi",
+      "ogDescription": "Contact Fortune Construction for infrastructure, building, civil engineering, and project consultation inquiries in Malawi.",
+      "twitterTitle": "Contact Fortune Construction | Project Consultation in Malawi",
+      "jsonLdCount": 0,
+      "pageHorizontalScroll": false,
+      "actionOverflow": []
+    },
+    "consoleErrors": [
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "failedRequests": [
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/content/contact :: net::ERR_CONNECTION_REFUSED",
+      "GET https://images.unsplash.com/photo-1545558014-8ab6aa17e307?q=80&w=2000&auto=format&fit=crop&fm=webp :: net::ERR_BLOCKED_BY_ORB",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/content/contact :: net::ERR_CONNECTION_REFUSED"
+    ],
+    "missing": [],
+    "pass": true
+  },
+  {
+    "route": "/about",
+    "viewport": "mobile",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/005-public-seo-improvements/evidence/T037-about-mobile.png",
+    "metadata": {
+      "title": "About Fortune Construction | Building Malawi Since 2006",
+      "description": "Learn about Fortune Construction's engineering heritage, safety culture, leadership, and infrastructure work across Malawi.",
+      "canonical": "https://fortuneconstruction.mw/about",
+      "robots": "index,follow",
+      "ogTitle": "About Fortune Construction | Building Malawi Since 2006",
+      "ogDescription": "Learn about Fortune Construction's engineering heritage, safety culture, leadership, and infrastructure work across Malawi.",
+      "twitterTitle": "About Fortune Construction | Building Malawi Since 2006",
+      "jsonLdCount": 0,
+      "pageHorizontalScroll": false,
+      "actionOverflow": []
+    },
+    "consoleErrors": [
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "failedRequests": [
+      "GET http://localhost:3001/api/team :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/content/about :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED",
+      "GET https://images.unsplash.com/photo-1541888086925-920a0f6707dd?q=80&w=2000&auto=format&fit=crop&fm=webp :: net::ERR_BLOCKED_BY_ORB",
+      "GET http://localhost:3001/api/team :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/content/about :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED"
+    ],
+    "missing": [],
+    "pass": true
+  },
+  {
+    "route": "/hse",
+    "viewport": "mobile",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/005-public-seo-improvements/evidence/T037-hse-mobile.png",
+    "metadata": {
+      "title": "Health, Safety & Quality | Fortune Construction",
+      "description": "See how Fortune Construction manages health, safety, environment, quality assurance, and certifications across construction projects.",
+      "canonical": "https://fortuneconstruction.mw/hse",
+      "robots": "index,follow",
+      "ogTitle": "Health, Safety & Quality | Fortune Construction",
+      "ogDescription": "See how Fortune Construction manages health, safety, environment, quality assurance, and certifications across construction projects.",
+      "twitterTitle": "Health, Safety & Quality | Fortune Construction",
+      "jsonLdCount": 0,
+      "pageHorizontalScroll": false,
+      "actionOverflow": []
+    },
+    "consoleErrors": [
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "failedRequests": [
+      "GET http://localhost:3001/api/partners :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/content/hse :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED",
+      "GET https://images.unsplash.com/photo-1541888086925-920a0f6707dd?q=80&w=2000&auto=format&fit=crop&fm=webp :: net::ERR_BLOCKED_BY_ORB",
+      "GET http://localhost:3001/api/partners :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/content/hse :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED"
+    ],
+    "missing": [],
+    "pass": true
+  },
+  {
+    "route": "/careers",
+    "viewport": "mobile",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/005-public-seo-improvements/evidence/T037-careers-mobile.png",
+    "metadata": {
+      "title": "Careers | Join Fortune Construction Malawi",
+      "description": "Find construction, engineering, project management, and HSE career opportunities with Fortune Construction in Malawi.",
+      "canonical": "https://fortuneconstruction.mw/careers",
+      "robots": "index,follow",
+      "ogTitle": "Careers | Join Fortune Construction Malawi",
+      "ogDescription": "Find construction, engineering, project management, and HSE career opportunities with Fortune Construction in Malawi.",
+      "twitterTitle": "Careers | Join Fortune Construction Malawi",
+      "jsonLdCount": 0,
+      "pageHorizontalScroll": false,
+      "actionOverflow": []
+    },
+    "consoleErrors": [
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "error: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "failedRequests": [
+      "GET http://localhost:3001/api/jobs :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/content/careers :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED",
+      "GET https://images.unsplash.com/photo-1541888086925-920a0f6707dd?q=80&w=2000&auto=format&fit=crop&fm=webp :: net::ERR_BLOCKED_BY_ORB",
+      "GET http://localhost:3001/api/jobs :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/content/careers :: net::ERR_CONNECTION_REFUSED",
+      "GET http://localhost:3001/api/settings :: net::ERR_CONNECTION_REFUSED"
+    ],
+    "missing": [],
+    "pass": true
+  }
+]

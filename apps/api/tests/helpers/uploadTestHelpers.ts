@@ -6,14 +6,11 @@ export function authHeader(): string {
 }
 
 export function filePart(content: string | Buffer, type: string): Blob {
-  if (typeof content === 'string') return new Blob([content], { type });
-  const bytes = new Uint8Array(content.byteLength);
-  bytes.set(content);
-  return new Blob([bytes], { type });
+  return new Blob([content], { type });
 }
 
 export function oversizedFilePart(bytes: number, type: string): Blob {
-  return new Blob([new Uint8Array(bytes)], { type });
+  return new Blob([Buffer.alloc(bytes)], { type });
 }
 
 export async function postMultipart(baseUrl: string, path: string, form: FormData, token?: string): Promise<Response> {

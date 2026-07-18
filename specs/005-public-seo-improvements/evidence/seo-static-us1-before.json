@@ -1,0 +1,119 @@
+{
+  "scope": "us1-before",
+  "results": [
+    {
+      "name": "index.html has fallback title",
+      "pass": true
+    },
+    {
+      "name": "index.html has fallback description",
+      "pass": true
+    },
+    {
+      "name": "router has /services route",
+      "pass": false
+    },
+    {
+      "name": "SEO profile exists for /",
+      "pass": false
+    },
+    {
+      "name": "SEO profile applied for /about",
+      "pass": false
+    },
+    {
+      "name": "SEO profile applied for /projects",
+      "pass": false
+    },
+    {
+      "name": "SEO profile applied for /projects/:id",
+      "pass": false
+    },
+    {
+      "name": "SEO profile applied for /services",
+      "pass": false
+    },
+    {
+      "name": "SEO profile applied for /hse",
+      "pass": false
+    },
+    {
+      "name": "SEO profile applied for /careers",
+      "pass": false
+    },
+    {
+      "name": "SEO profile applied for /contact",
+      "pass": false
+    },
+    {
+      "name": "canonical helper exists",
+      "pass": false
+    },
+    {
+      "name": "canonical helper uses non-localhost production fallback",
+      "pass": false
+    },
+    {
+      "name": "canonical helper guards localhost production output",
+      "pass": false
+    },
+    {
+      "name": "SeoHead component exists",
+      "pass": false
+    }
+  ],
+  "failed": [
+    {
+      "name": "router has /services route",
+      "pass": false
+    },
+    {
+      "name": "SEO profile exists for /",
+      "pass": false
+    },
+    {
+      "name": "SEO profile applied for /about",
+      "pass": false
+    },
+    {
+      "name": "SEO profile applied for /projects",
+      "pass": false
+    },
+    {
+      "name": "SEO profile applied for /projects/:id",
+      "pass": false
+    },
+    {
+      "name": "SEO profile applied for /services",
+      "pass": false
+    },
+    {
+      "name": "SEO profile applied for /hse",
+      "pass": false
+    },
+    {
+      "name": "SEO profile applied for /careers",
+      "pass": false
+    },
+    {
+      "name": "SEO profile applied for /contact",
+      "pass": false
+    },
+    {
+      "name": "canonical helper exists",
+      "pass": false
+    },
+    {
+      "name": "canonical helper uses non-localhost production fallback",
+      "pass": false
+    },
+    {
+      "name": "canonical helper guards localhost production output",
+      "pass": false
+    },
+    {
+      "name": "SeoHead component exists",
+      "pass": false
+    }
+  ]
+}

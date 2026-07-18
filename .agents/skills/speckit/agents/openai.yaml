@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spec Kit"
+  short_description: "Run Spec Kit workflows in Codex"
+  default_prompt: "Use $speckit to create or continue a Spec Kit workflow for this project."

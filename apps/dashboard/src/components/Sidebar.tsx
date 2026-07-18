@@ -3,9 +3,10 @@ import { motion } from 'framer-motion'
 import {
   LayoutDashboard, FolderKanban, Briefcase, MessageSquare,
   Users, Handshake, Settings, Wrench, HardHat, ChevronRight, FileText, Trophy,
-  Tags,
+  Tags, X,
 } from 'lucide-react'
 import { cn } from '@fortune/shared-ui'
+import { PUBLIC_SITE_URL } from '../lib/api'
 
 const NAV = [
   { label: 'Overview', icon: LayoutDashboard, to: '/' },
@@ -21,11 +22,31 @@ const NAV = [
   { label: 'Settings', icon: Settings, to: '/settings' },
 ]
 
-export default function Sidebar() {
+interface SidebarProps {
+  open?: boolean
+  onClose?: () => void
+}
+
+export default function Sidebar({ open = false, onClose }: SidebarProps) {
   return (
-    <aside className="w-64 flex-shrink-0 bg-slate-950 text-white flex flex-col h-full shadow-2xl z-20">
+    <>
+      <button
+        type="button"
+        aria-label="Close dashboard navigation"
+        onClick={onClose}
+        className={cn(
+          'fixed inset-0 z-30 bg-slate-950/50 backdrop-blur-sm transition-opacity md:hidden',
+          open ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0',
+        )}
+      />
+      <aside
+        className={cn(
+          'fixed inset-y-0 left-0 z-40 flex h-full w-[min(18rem,82vw)] flex-shrink-0 flex-col bg-slate-950 text-white shadow-2xl transition-transform duration-300 md:static md:z-20 md:w-64 md:translate-x-0',
+          open ? 'translate-x-0' : '-translate-x-full',
+        )}
+      >
       {/* Logo Area */}
-      <div className="h-20 flex items-center px-6 border-b border-slate-800/50">
+      <div className="h-20 flex items-center justify-between gap-4 px-6 border-b border-slate-800/50">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-teal-600 rounded-xl flex items-center justify-center shadow-lg shadow-teal-500/20">
             <HardHat className="w-5 h-5 text-white" />
@@ -35,6 +56,14 @@ export default function Sidebar() {
             <p className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em] leading-none">Management</p>
           </div>
         </div>
+        <button
+          type="button"
+          onClick={onClose}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-800 text-slate-400 transition-colors hover:border-teal-500/40 hover:text-white md:hidden"
+          aria-label="Close dashboard navigation"
+        >
+          <X className="h-5 w-5" />
+        </button>
       </div>
 
       {/* Navigation */}
@@ -44,6 +73,7 @@ export default function Sidebar() {
             key={to}
             to={to}
             end={to === '/'}
+            onClick={onClose}
             className={({ isActive }) =>
               cn(
                 'flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-300 group relative overflow-hidden',
@@ -74,7 +104,7 @@ export default function Sidebar() {
       {/* Sidebar Footer */}
       <div className="p-6 border-t border-slate-800/50">
         <a
-          href="http://localhost:5173"
+          href={PUBLIC_SITE_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-teal-500/30 hover:bg-slate-900 transition-all group"
@@ -86,6 +116,7 @@ export default function Sidebar() {
           <ChevronRight className="w-3 h-3 text-slate-600 group-hover:text-teal-500 group-hover:translate-x-0.5 transition-all" />
         </a>
       </div>
-    </aside>
+      </aside>
+    </>
   )
 }

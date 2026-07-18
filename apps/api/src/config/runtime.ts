@@ -29,6 +29,17 @@ function splitOrigins(value: string | undefined): string[] {
     .filter(Boolean);
 }
 
+function resolveOrigin(env: NodeJS.ProcessEnv, name: 'PUBLIC_SITE_ORIGIN' | 'DASHBOARD_ORIGIN', localFallback: string): string {
+  const configured = env[name]?.trim();
+  if (configured) return configured;
+
+  if (env.NODE_ENV === 'production') {
+    throw new Error(`${name} must be configured for production.`);
+  }
+
+  return localFallback;
+}
+
 export function getJwtSecretStatus(secret?: string): RuntimeConfig['jwtSecretStatus'] {
   const candidate = arguments.length === 0 ? process.env.JWT_SECRET : secret;
   if (candidate === undefined) return 'missing';
@@ -59,8 +70,8 @@ export function allowsRemoteDatabase(env: NodeJS.ProcessEnv = process.env): bool
 
 export function loadRuntimeConfig(env: NodeJS.ProcessEnv = process.env): RuntimeConfig {
   const nodeEnv = (env.NODE_ENV || 'local') as RuntimeMode;
-  const publicSiteOrigin = env.PUBLIC_SITE_ORIGIN || 'http://localhost:5173';
-  const dashboardOrigin = env.DASHBOARD_ORIGIN || 'http://localhost:5174';
+  const publicSiteOrigin = resolveOrigin(env, 'PUBLIC_SITE_ORIGIN', 'http://localhost:5173');
+  const dashboardOrigin = resolveOrigin(env, 'DASHBOARD_ORIGIN', 'http://localhost:5174');
 
   return {
     port: parsePort(env.PORT),

@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { useFieldArray } from 'react-hook-form'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { api, uploadImage } from '../lib/api'
+import { DataUnavailableState } from '../components/errors/DataUnavailableState'
+import { isNetworkUnavailableError } from '../lib/errorHandling'
 import { Plus, Pencil, Trash2, Loader2, MapPin, DollarSign, Clock, ImagePlus, X, ListPlus } from 'lucide-react'
 import { toast } from 'sonner'
 import {
@@ -142,12 +144,23 @@ export default function Projects() {
     defaultValues: EMPTY_FORM,
   })
 
-  const { data: projects = [], isLoading } = useQuery<Project[]>({
+  const {
+    data: projects = [],
+    error: projectsError,
+    isError: projectsHasError,
+    isLoading,
+    refetch: retryProjects,
+  } = useQuery<Project[]>({
     queryKey: ['projects'],
     queryFn: () => api.get('/projects').then((r) => r.data),
   })
 
-  const { data: categories = [] } = useQuery<ProjectCategory[]>({
+  const {
+    data: categories = [],
+    error: categoriesError,
+    isError: categoriesHasError,
+    refetch: retryCategories,
+  } = useQuery<ProjectCategory[]>({
     queryKey: ['project-categories'],
     queryFn: () => api.get('/project-categories').then((r) => r.data),
   })
@@ -226,6 +239,27 @@ export default function Projects() {
     return <div className="flex justify-center p-8"><Loader2 className="h-8 w-8 animate-spin text-teal-500" /></div>
   }
 
+  if (projectsHasError && isNetworkUnavailableError(projectsError)) {
+    return (
+      <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-2xl font-display font-bold text-slate-900 dark:text-white">Projects</h1>
+            <p className="mt-1 text-sm text-slate-500">Project records are temporarily unavailable.</p>
+          </div>
+        </div>
+        <DataUnavailableState
+          error={projectsError}
+          onRetry={() => void retryProjects()}
+          resourceLabel="project records"
+          title="Projects temporarily unavailable"
+        />
+      </div>
+    )
+  }
+
+  const categoriesUnavailable = categoriesHasError && isNetworkUnavailableError(categoriesError)
+
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="flex items-center justify-between">
@@ -237,6 +271,16 @@ export default function Projects() {
           <Plus className="mr-2 h-4 w-4" /> Add Project
         </Button>
       </div>
+
+      {categoriesUnavailable && (
+        <DataUnavailableState
+          error={categoriesError}
+          message="Project category options are temporarily unavailable. Existing project validation remains inline inside the form."
+          onRetry={() => void retryCategories()}
+          resourceLabel="project categories"
+          title="Project categories temporarily unavailable"
+        />
+      )}
 
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {projects.map((project) => (

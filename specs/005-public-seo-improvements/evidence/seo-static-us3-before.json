@@ -1,0 +1,87 @@
+{
+  "scope": "us3-before",
+  "results": [
+    {
+      "name": "index.html has fallback title",
+      "pass": true
+    },
+    {
+      "name": "index.html has fallback description",
+      "pass": true
+    },
+    {
+      "name": "router has /services route",
+      "pass": true
+    },
+    {
+      "name": "SEO profile exists for /",
+      "pass": true
+    },
+    {
+      "name": "SEO profile applied for /about",
+      "pass": true
+    },
+    {
+      "name": "SEO profile applied for /projects",
+      "pass": true
+    },
+    {
+      "name": "SEO profile applied for /projects/:id",
+      "pass": true
+    },
+    {
+      "name": "SEO profile applied for /services",
+      "pass": true
+    },
+    {
+      "name": "SEO profile applied for /hse",
+      "pass": true
+    },
+    {
+      "name": "SEO profile applied for /careers",
+      "pass": true
+    },
+    {
+      "name": "SEO profile applied for /contact",
+      "pass": true
+    },
+    {
+      "name": "canonical helper exists",
+      "pass": true
+    },
+    {
+      "name": "canonical helper uses non-localhost production fallback",
+      "pass": true
+    },
+    {
+      "name": "canonical helper guards localhost production output",
+      "pass": true
+    },
+    {
+      "name": "SeoHead component exists",
+      "pass": true
+    },
+    {
+      "name": "sitemap exists",
+      "pass": false,
+      "deferredUntil": "US3"
+    },
+    {
+      "name": "robots exists",
+      "pass": false,
+      "deferredUntil": "US3"
+    }
+  ],
+  "failed": [
+    {
+      "name": "sitemap exists",
+      "pass": false,
+      "deferredUntil": "US3"
+    },
+    {
+      "name": "robots exists",
+      "pass": false,
+      "deferredUntil": "US3"
+    }
+  ]
+}

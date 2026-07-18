@@ -1,0 +1,226 @@
+[
+  {
+    "task": "T060",
+    "route": "/projects",
+    "viewport": "1440x1000",
+    "viewportName": "desktop",
+    "status": 200,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T060-us3-projects-desktop.png",
+    "consoleErrors": [],
+    "failedRequests": [
+      "GET https://images.unsplash.com/photo-1590486803622-92fd0d97034c?q=80&w=1200 :: net::ERR_BLOCKED_BY_ORB",
+      "GET https://images.unsplash.com/photo-1545558014-8ab6aa17e307?q=80&w=1200 :: net::ERR_BLOCKED_BY_ORB"
+    ],
+    "metrics": {
+      "path": "/projects",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tableCount": 0,
+      "emptyText": []
+    }
+  },
+  {
+    "task": "T060",
+    "route": "/content",
+    "viewport": "1440x1000",
+    "viewportName": "desktop",
+    "status": 200,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T060-us3-content-desktop.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "metrics": {
+      "path": "/content",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tableCount": 0,
+      "emptyText": []
+    }
+  },
+  {
+    "task": "T060",
+    "route": "/messages",
+    "viewport": "1440x1000",
+    "viewportName": "desktop",
+    "status": 200,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T060-us3-messages-desktop.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "metrics": {
+      "path": "/messages",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tableCount": 0,
+      "emptyText": []
+    }
+  },
+  {
+    "task": "T060",
+    "route": "/applications",
+    "viewport": "1440x1000",
+    "viewportName": "desktop",
+    "status": 200,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T060-us3-applications-desktop.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "metrics": {
+      "path": "/applications",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tableCount": 0,
+      "emptyText": [
+        {
+          "tag": "div",
+          "cls": "bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden",
+          "left": 280,
+          "right": 1416,
+          "width": 1136,
+          "fitsViewport": true
+        },
+        {
+          "tag": "div",
+          "cls": "px-6 py-20 text-center text-slate-400 dark:text-slate-600",
+          "left": 281,
+          "right": 1415,
+          "width": 1134,
+          "fitsViewport": true
+        },
+        {
+          "tag": "p",
+          "cls": "mx-auto max-w-xs text-sm font-medium leading-6",
+          "left": 688,
+          "right": 1008,
+          "width": 320,
+          "fitsViewport": true
+        }
+      ]
+    }
+  },
+  {
+    "task": "T060",
+    "route": "/projects",
+    "viewport": "390x844",
+    "viewportName": "mobile",
+    "status": 200,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T060-us3-projects-mobile.png",
+    "consoleErrors": [],
+    "failedRequests": [
+      "GET https://images.unsplash.com/photo-1545558014-8ab6aa17e307?q=80&w=1200 :: net::ERR_BLOCKED_BY_ORB",
+      "GET https://images.unsplash.com/photo-1590486803622-92fd0d97034c?q=80&w=1200 :: net::ERR_BLOCKED_BY_ORB"
+    ],
+    "metrics": {
+      "path": "/projects",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tableCount": 0,
+      "emptyText": []
+    }
+  },
+  {
+    "task": "T060",
+    "route": "/content",
+    "viewport": "390x844",
+    "viewportName": "mobile",
+    "status": 200,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T060-us3-content-mobile.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "metrics": {
+      "path": "/content",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tableCount": 0,
+      "emptyText": []
+    }
+  },
+  {
+    "task": "T060",
+    "route": "/messages",
+    "viewport": "390x844",
+    "viewportName": "mobile",
+    "status": 200,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T060-us3-messages-mobile.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "metrics": {
+      "path": "/messages",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tableCount": 0,
+      "emptyText": []
+    }
+  },
+  {
+    "task": "T060",
+    "route": "/applications",
+    "viewport": "390x844",
+    "viewportName": "mobile",
+    "status": 200,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T060-us3-applications-mobile.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "metrics": {
+      "path": "/applications",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tableCount": 0,
+      "emptyText": [
+        {
+          "tag": "div",
+          "cls": "bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden",
+          "left": 16,
+          "right": 374,
+          "width": 358,
+          "fitsViewport": true
+        },
+        {
+          "tag": "div",
+          "cls": "px-6 py-20 text-center text-slate-400 dark:text-slate-600",
+          "left": 17,
+          "right": 373,
+          "width": 356,
+          "fitsViewport": true
+        },
+        {
+          "tag": "p",
+          "cls": "mx-auto max-w-xs text-sm font-medium leading-6",
+          "left": 41,
+          "right": 349,
+          "width": 308,
+          "fitsViewport": true
+        }
+      ]
+    }
+  }
+]

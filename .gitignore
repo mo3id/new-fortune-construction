@@ -6,11 +6,18 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+.env*
 
 node_modules
 dist
 dist-ssr
 *.local
+*.tsbuildinfo
+tmp/
+output/
+frontend-prod.zip
+frontend_deploy.zip
+vite.config.ts.timestamp-*
 
 # Editor directories and files
 .vscode/*
@@ -27,6 +34,9 @@ dist-ssr
 .mongodb-data/
 apps/api/.mongodb-data/
 .vercel
+
+# Runtime uploads
+apps/api/uploads/
 
 # Spec Kit - opencode agent credentials
 .opencode/

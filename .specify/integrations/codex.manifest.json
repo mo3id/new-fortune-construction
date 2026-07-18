@@ -1,0 +1,10 @@
+{
+  "integration": "codex",
+  "version": "0.8.5.dev0",
+  "installed_at": "2026-07-16T00:00:00+02:00",
+  "files": {
+    ".agents/skills/speckit/SKILL.md": "4dd05efedb5439f1c0ebeee59f4913675225a9094f4522a2c7376e8c8a23365e",
+    ".agents/skills/speckit/agents/openai.yaml": "fbcedd02508f9abbc119617178b511262c98e611c2e7484a5c480f514e207b74",
+    ".agents/skills/speckit/references/codex-workflows.md": "66950117153bab6a1f17d021efd6e14875054d08306185244e5738c33253691c"
+  }
+}
