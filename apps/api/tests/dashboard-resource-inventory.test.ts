@@ -22,12 +22,12 @@ test('dashboard registers management routes and sidebar links for existing publi
   for (const page of dashboardPages) {
     assertContains(
       appSource,
-      new RegExp(`import\\s+${page.component}\\s+from\\s+['"]${page.importPath.replace('/', '\\/')}['"]`),
-      `${page.label} dashboard page must be imported`
+      new RegExp(`const\\s+${page.component}\\s*=\\s*lazy\\(\\(\\)\\s*=>\\s*import\\(['"]${page.importPath.replace('/', '\\/')}['"]\\)\\)`),
+      `${page.label} dashboard page must be lazy imported`
     );
     assertContains(
       appSource,
-      new RegExp(`path=["']${page.route}["']\\s+element=\\{<${page.component}\\s*\\/>\\}`),
+      new RegExp(`path=["']${page.route}["']\\s+element=\\{withRouteFallback\\(<${page.component}\\s*\\/>\\)\\}`),
       `${page.label} dashboard route must be registered`
     );
     assertContains(sidebarSource, new RegExp(`to:\\s*['"]${page.sidebar.replace(/\//g, '\\/')}['"]`), `${page.label} sidebar link must exist`);

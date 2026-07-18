@@ -1,0 +1,1365 @@
+[
+  {
+    "task": "T035",
+    "group": "shell-overview",
+    "route": "/",
+    "viewport": "1440x1000",
+    "viewportName": "desktop",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T035-dashboard-home-desktop.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": true,
+      "bodyTextLength": 506
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/applications",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [
+        {
+          "rows": 1,
+          "headers": 5,
+          "wrapperScrolls": true
+        }
+      ],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": true,
+      "bodyTextLength": 390
+    }
+  },
+  {
+    "task": "T036",
+    "group": "projects-categories",
+    "route": "/projects",
+    "viewport": "1440x1000",
+    "viewportName": "desktop",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T036-projects-desktop.png",
+    "consoleErrors": [],
+    "failedRequests": [
+      "GET https://images.unsplash.com/photo-1590486803622-92fd0d97034c?q=80&w=1200 :: net::ERR_BLOCKED_BY_ORB",
+      "GET https://images.unsplash.com/photo-1545558014-8ab6aa17e307?q=80&w=1200 :: net::ERR_BLOCKED_BY_ORB"
+    ],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/projects",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 630
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/projects",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [
+        {
+          "inputs": 20,
+          "labels": 20,
+          "buttons": 7
+        }
+      ],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 1507
+    }
+  },
+  {
+    "task": "T036",
+    "group": "projects-categories",
+    "route": "/project-categories",
+    "viewport": "1440x1000",
+    "viewportName": "desktop",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T036-project-categories-desktop.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/project-categories",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 640
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/project-categories",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [
+        {
+          "inputs": 4,
+          "labels": 4,
+          "buttons": 2
+        }
+      ],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 719
+    }
+  },
+  {
+    "task": "T037",
+    "group": "services-partners-team",
+    "route": "/services",
+    "viewport": "1440x1000",
+    "viewportName": "desktop",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T037-services-desktop.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/services",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 1158
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/services",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [
+        {
+          "inputs": 8,
+          "labels": 6,
+          "buttons": 5
+        }
+      ],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 1397
+    }
+  },
+  {
+    "task": "T037",
+    "group": "services-partners-team",
+    "route": "/partners",
+    "viewport": "1440x1000",
+    "viewportName": "desktop",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T037-partners-desktop.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/partners",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 602
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/partners",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [
+        {
+          "inputs": 7,
+          "labels": 6,
+          "buttons": 3
+        }
+      ],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 780
+    }
+  },
+  {
+    "task": "T037",
+    "group": "services-partners-team",
+    "route": "/team",
+    "viewport": "1440x1000",
+    "viewportName": "desktop",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T037-team-desktop.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/team",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 842
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/team",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [
+        {
+          "inputs": 8,
+          "labels": 6,
+          "buttons": 3
+        }
+      ],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 993
+    }
+  },
+  {
+    "task": "T038",
+    "group": "jobs-settings-content",
+    "route": "/jobs",
+    "viewport": "1440x1000",
+    "viewportName": "desktop",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T038-jobs-desktop.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/jobs",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 766
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/jobs",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [
+        {
+          "inputs": 5,
+          "labels": 6,
+          "buttons": 4
+        }
+      ],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 906
+    }
+  },
+  {
+    "task": "T038",
+    "group": "jobs-settings-content",
+    "route": "/settings",
+    "viewport": "1440x1000",
+    "viewportName": "desktop",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T038-settings-desktop.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/settings",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [
+        {
+          "inputs": 16,
+          "labels": 13,
+          "buttons": 0
+        }
+      ],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 640
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/settings",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [
+        {
+          "inputs": 16,
+          "labels": 13,
+          "buttons": 0
+        }
+      ],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 640
+    }
+  },
+  {
+    "task": "T038",
+    "group": "jobs-settings-content",
+    "route": "/content",
+    "viewport": "1440x1000",
+    "viewportName": "desktop",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T038-content-desktop.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/content",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 386
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/content",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 386
+    }
+  },
+  {
+    "task": "T039",
+    "group": "messages-applications",
+    "route": "/messages",
+    "viewport": "1440x1000",
+    "viewportName": "desktop",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T039-messages-desktop.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/messages",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": true,
+      "bodyTextLength": 324
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/messages",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": true,
+      "bodyTextLength": 324
+    }
+  },
+  {
+    "task": "T039",
+    "group": "messages-applications",
+    "route": "/applications",
+    "viewport": "1440x1000",
+    "viewportName": "desktop",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T039-applications-desktop.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/applications",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [
+        {
+          "rows": 1,
+          "headers": 5,
+          "wrapperScrolls": true
+        }
+      ],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": true,
+      "bodyTextLength": 390
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/applications",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "innerWidth": 1440,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [
+        {
+          "rows": 1,
+          "headers": 5,
+          "wrapperScrolls": true
+        }
+      ],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": true,
+      "bodyTextLength": 390
+    }
+  },
+  {
+    "task": "T035",
+    "group": "shell-overview",
+    "route": "/",
+    "viewport": "390x844",
+    "viewportName": "mobile",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T035-dashboard-home-mobile.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": true,
+      "bodyTextLength": 477
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/applications",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [
+        {
+          "tag": "table",
+          "cls": "w-full text-sm",
+          "text": "ApplicantPositionStatusDateNo applications found matching your criteria",
+          "left": 17,
+          "right": 483,
+          "width": 466,
+          "rightOverflow": 93,
+          "leftOverflow": -17
+        },
+        {
+          "tag": "thead",
+          "cls": "",
+          "text": "ApplicantPositionStatusDate",
+          "left": 17,
+          "right": 483,
+          "width": 466,
+          "rightOverflow": 93,
+          "leftOverflow": -17
+        },
+        {
+          "tag": "tr",
+          "cls": "border-b border-slate-50 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30",
+          "text": "ApplicantPositionStatusDate",
+          "left": 17,
+          "right": 483,
+          "width": 466,
+          "rightOverflow": 93,
+          "leftOverflow": -17
+        },
+        {
+          "tag": "th",
+          "cls": "text-left px-6 py-4 text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em]",
+          "text": "Date",
+          "left": 353,
+          "right": 435,
+          "width": 82,
+          "rightOverflow": 45,
+          "leftOverflow": -353
+        },
+        {
+          "tag": "tbody",
+          "cls": "divide-y divide-slate-50 dark:divide-slate-800",
+          "text": "No applications found matching your criteria",
+          "left": 17,
+          "right": 483,
+          "width": 466,
+          "rightOverflow": 93,
+          "leftOverflow": -17
+        },
+        {
+          "tag": "tr",
+          "cls": "",
+          "text": "No applications found matching your criteria",
+          "left": 17,
+          "right": 483,
+          "width": 466,
+          "rightOverflow": 93,
+          "leftOverflow": -17
+        },
+        {
+          "tag": "td",
+          "cls": "text-center py-20 text-slate-400 dark:text-slate-600 font-medium",
+          "text": "No applications found matching your criteria",
+          "left": 17,
+          "right": 483,
+          "width": 466,
+          "rightOverflow": 93,
+          "leftOverflow": -17
+        }
+      ],
+      "actionOverflow": [],
+      "tables": [
+        {
+          "rows": 1,
+          "headers": 5,
+          "wrapperScrolls": true
+        }
+      ],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": true,
+      "bodyTextLength": 361
+    }
+  },
+  {
+    "task": "T036",
+    "group": "projects-categories",
+    "route": "/projects",
+    "viewport": "390x844",
+    "viewportName": "mobile",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T036-projects-mobile.png",
+    "consoleErrors": [],
+    "failedRequests": [
+      "GET https://images.unsplash.com/photo-1545558014-8ab6aa17e307?q=80&w=1200 :: net::ERR_BLOCKED_BY_ORB",
+      "GET https://images.unsplash.com/photo-1590486803622-92fd0d97034c?q=80&w=1200 :: net::ERR_BLOCKED_BY_ORB"
+    ],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/projects",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 601
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/projects",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [
+        {
+          "inputs": 20,
+          "labels": 20,
+          "buttons": 7
+        }
+      ],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 1478
+    }
+  },
+  {
+    "task": "T036",
+    "group": "projects-categories",
+    "route": "/project-categories",
+    "viewport": "390x844",
+    "viewportName": "mobile",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T036-project-categories-mobile.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/project-categories",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 611
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/project-categories",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [
+        {
+          "inputs": 4,
+          "labels": 4,
+          "buttons": 2
+        }
+      ],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 690
+    }
+  },
+  {
+    "task": "T037",
+    "group": "services-partners-team",
+    "route": "/services",
+    "viewport": "390x844",
+    "viewportName": "mobile",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T037-services-mobile.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/services",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 1129
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/services",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [
+        {
+          "inputs": 8,
+          "labels": 6,
+          "buttons": 5
+        }
+      ],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 1368
+    }
+  },
+  {
+    "task": "T037",
+    "group": "services-partners-team",
+    "route": "/partners",
+    "viewport": "390x844",
+    "viewportName": "mobile",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T037-partners-mobile.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/partners",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 573
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/partners",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [
+        {
+          "inputs": 7,
+          "labels": 6,
+          "buttons": 3
+        }
+      ],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 751
+    }
+  },
+  {
+    "task": "T037",
+    "group": "services-partners-team",
+    "route": "/team",
+    "viewport": "390x844",
+    "viewportName": "mobile",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T037-team-mobile.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/team",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 813
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/team",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [
+        {
+          "inputs": 8,
+          "labels": 6,
+          "buttons": 3
+        }
+      ],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 964
+    }
+  },
+  {
+    "task": "T038",
+    "group": "jobs-settings-content",
+    "route": "/jobs",
+    "viewport": "390x844",
+    "viewportName": "mobile",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T038-jobs-mobile.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/jobs",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 737
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/jobs",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [
+        {
+          "inputs": 5,
+          "labels": 6,
+          "buttons": 4
+        }
+      ],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 877
+    }
+  },
+  {
+    "task": "T038",
+    "group": "jobs-settings-content",
+    "route": "/settings",
+    "viewport": "390x844",
+    "viewportName": "mobile",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T038-settings-mobile.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/settings",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [
+        {
+          "inputs": 16,
+          "labels": 13,
+          "buttons": 0
+        }
+      ],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 611
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/settings",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [
+        {
+          "inputs": 16,
+          "labels": 13,
+          "buttons": 0
+        }
+      ],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 611
+    }
+  },
+  {
+    "task": "T038",
+    "group": "jobs-settings-content",
+    "route": "/content",
+    "viewport": "390x844",
+    "viewportName": "mobile",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T038-content-mobile.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/content",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 357
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/content",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": false,
+      "bodyTextLength": 357
+    }
+  },
+  {
+    "task": "T039",
+    "group": "messages-applications",
+    "route": "/messages",
+    "viewport": "390x844",
+    "viewportName": "mobile",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T039-messages-mobile.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/messages",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": true,
+      "bodyTextLength": 295
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/messages",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [],
+      "actionOverflow": [],
+      "tables": [],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": true,
+      "bodyTextLength": 295
+    }
+  },
+  {
+    "task": "T039",
+    "group": "messages-applications",
+    "route": "/applications",
+    "viewport": "390x844",
+    "viewportName": "mobile",
+    "status": 200,
+    "navError": null,
+    "screenshot": "/Users/mohamedeidali/Desktop/fortune-construction/specs/004-ui-ux-responsive/evidence/T039-applications-mobile.png",
+    "consoleErrors": [],
+    "failedRequests": [],
+    "modalAttempt": {
+      "opened": false,
+      "trigger": null
+    },
+    "metrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/applications",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [
+        {
+          "tag": "table",
+          "cls": "w-full text-sm",
+          "text": "ApplicantPositionStatusDateNo applications found matching your criteria",
+          "left": 17,
+          "right": 483,
+          "width": 466,
+          "rightOverflow": 93,
+          "leftOverflow": -17
+        },
+        {
+          "tag": "thead",
+          "cls": "",
+          "text": "ApplicantPositionStatusDate",
+          "left": 17,
+          "right": 483,
+          "width": 466,
+          "rightOverflow": 93,
+          "leftOverflow": -17
+        },
+        {
+          "tag": "tr",
+          "cls": "border-b border-slate-50 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30",
+          "text": "ApplicantPositionStatusDate",
+          "left": 17,
+          "right": 483,
+          "width": 466,
+          "rightOverflow": 93,
+          "leftOverflow": -17
+        },
+        {
+          "tag": "th",
+          "cls": "text-left px-6 py-4 text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em]",
+          "text": "Date",
+          "left": 353,
+          "right": 435,
+          "width": 82,
+          "rightOverflow": 45,
+          "leftOverflow": -353
+        },
+        {
+          "tag": "tbody",
+          "cls": "divide-y divide-slate-50 dark:divide-slate-800",
+          "text": "No applications found matching your criteria",
+          "left": 17,
+          "right": 483,
+          "width": 466,
+          "rightOverflow": 93,
+          "leftOverflow": -17
+        },
+        {
+          "tag": "tr",
+          "cls": "",
+          "text": "No applications found matching your criteria",
+          "left": 17,
+          "right": 483,
+          "width": 466,
+          "rightOverflow": 93,
+          "leftOverflow": -17
+        },
+        {
+          "tag": "td",
+          "cls": "text-center py-20 text-slate-400 dark:text-slate-600 font-medium",
+          "text": "No applications found matching your criteria",
+          "left": 17,
+          "right": 483,
+          "width": 466,
+          "rightOverflow": 93,
+          "leftOverflow": -17
+        }
+      ],
+      "actionOverflow": [],
+      "tables": [
+        {
+          "rows": 1,
+          "headers": 5,
+          "wrapperScrolls": true
+        }
+      ],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": true,
+      "bodyTextLength": 361
+    },
+    "modalMetrics": {
+      "title": "Fortune Construction — Admin Dashboard",
+      "path": "/applications",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "pageHorizontalScroll": false,
+      "overflowOffenders": [
+        {
+          "tag": "table",
+          "cls": "w-full text-sm",
+          "text": "ApplicantPositionStatusDateNo applications found matching your criteria",
+          "left": 17,
+          "right": 483,
+          "width": 466,
+          "rightOverflow": 93,
+          "leftOverflow": -17
+        },
+        {
+          "tag": "thead",
+          "cls": "",
+          "text": "ApplicantPositionStatusDate",
+          "left": 17,
+          "right": 483,
+          "width": 466,
+          "rightOverflow": 93,
+          "leftOverflow": -17
+        },
+        {
+          "tag": "tr",
+          "cls": "border-b border-slate-50 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30",
+          "text": "ApplicantPositionStatusDate",
+          "left": 17,
+          "right": 483,
+          "width": 466,
+          "rightOverflow": 93,
+          "leftOverflow": -17
+        },
+        {
+          "tag": "th",
+          "cls": "text-left px-6 py-4 text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em]",
+          "text": "Date",
+          "left": 353,
+          "right": 435,
+          "width": 82,
+          "rightOverflow": 45,
+          "leftOverflow": -353
+        },
+        {
+          "tag": "tbody",
+          "cls": "divide-y divide-slate-50 dark:divide-slate-800",
+          "text": "No applications found matching your criteria",
+          "left": 17,
+          "right": 483,
+          "width": 466,
+          "rightOverflow": 93,
+          "leftOverflow": -17
+        },
+        {
+          "tag": "tr",
+          "cls": "",
+          "text": "No applications found matching your criteria",
+          "left": 17,
+          "right": 483,
+          "width": 466,
+          "rightOverflow": 93,
+          "leftOverflow": -17
+        },
+        {
+          "tag": "td",
+          "cls": "text-center py-20 text-slate-400 dark:text-slate-600 font-medium",
+          "text": "No applications found matching your criteria",
+          "left": 17,
+          "right": 483,
+          "width": 466,
+          "rightOverflow": 93,
+          "leftOverflow": -17
+        }
+      ],
+      "actionOverflow": [],
+      "tables": [
+        {
+          "rows": 1,
+          "headers": 5,
+          "wrapperScrolls": true
+        }
+      ],
+      "forms": [],
+      "dialogs": [],
+      "emptyTextPresent": true,
+      "bodyTextLength": 361
+    }
+  }
+]

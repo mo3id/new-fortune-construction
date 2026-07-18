@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
-import { api } from '../lib/api'
+import { api, uploadImage } from '../lib/api'
 import { Pencil, X, Loader2, Plus } from 'lucide-react'
 import { toast } from 'sonner'
 import { 
@@ -162,10 +162,7 @@ export default function Services() {
               label="Service Icon"
               value={form.watch('icon')}
               onChange={(val) => form.setValue('icon', val)}
-              onUpload={async (file) => {
-                const { uploadImage } = await import('../lib/api')
-                return uploadImage(file)
-              }}
+              onUpload={uploadImage}
               accept="any"
               helperText="Choose a preset icon or upload a custom image (PNG/SVG preferred)"
             />
@@ -174,10 +171,7 @@ export default function Services() {
               label="Background Image"
               value={form.watch('bgImage')}
               onChange={(val) => form.setValue('bgImage', val)}
-              onUpload={async (file) => {
-                const { uploadImage } = await import('../lib/api')
-                return uploadImage(file)
-              }}
+              onUpload={uploadImage}
               accept="image"
               helperText="Upload a cover image for the service card"
             />

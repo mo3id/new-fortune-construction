@@ -1,6 +1,5 @@
-import { Component, ReactNode } from 'react'
-import { AlertTriangle } from 'lucide-react'
-import { Button } from '@fortune/shared-ui'
+import { Component, type ErrorInfo, type ReactNode } from 'react'
+import AppErrorPage from '@/pages/AppErrorPage'
 
 interface Props {
   children: ReactNode
@@ -21,45 +20,17 @@ export class ErrorBoundary extends Component<Props, State> {
     return { hasError: true, error }
   }
 
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.error('ErrorBoundary caught an error:', error, errorInfo)
+  }
+
+  reset = () => {
+    this.setState({ hasError: false, error: null })
   }
 
   render() {
     if (this.state.hasError) {
-      return (
-        <div className="min-h-screen bg-gray-50 flex items-center justify-center px-6">
-          <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8 text-center">
-            <div className="mb-6">
-              <AlertTriangle className="w-16 h-16 text-red-500 mx-auto" />
-            </div>
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">
-              Something went wrong
-            </h1>
-            <p className="text-gray-600 mb-6">
-              We're sorry, but something unexpected happened. Please try refreshing the page.
-            </p>
-            {import.meta.env.DEV && this.state.error && (
-              <div className="mb-6 p-4 bg-red-50 rounded-lg text-left">
-                <p className="text-xs font-mono text-red-800 break-all">
-                  {this.state.error.message}
-                </p>
-              </div>
-            )}
-            <div className="flex gap-3 justify-center">
-              <Button
-                onClick={() => window.location.href = '/'}
-                variant="outline"
-              >
-                Go Home
-              </Button>
-              <Button onClick={() => window.location.reload()}>
-                Reload Page
-              </Button>
-            </div>
-          </div>
-        </div>
-      )
+      return <AppErrorPage error={this.state.error} resetError={this.reset} />
     }
 
     return this.props.children

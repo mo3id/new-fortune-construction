@@ -1,0 +1,112 @@
+{
+  "scope": "all",
+  "results": [
+    {
+      "name": "StructuredDataItem type exists",
+      "pass": true
+    },
+    {
+      "name": "organization structured data builder exists",
+      "pass": true
+    },
+    {
+      "name": "contact structured data builder exists",
+      "pass": true
+    },
+    {
+      "name": "services structured data builder exists",
+      "pass": true
+    },
+    {
+      "name": "structured data uses schema.org context",
+      "pass": true
+    },
+    {
+      "name": "structured data uses known SITE constants",
+      "pass": true
+    },
+    {
+      "name": "structured data includes visible service names",
+      "pass": true
+    },
+    {
+      "name": "home page wires organizationStructuredData",
+      "pass": true
+    },
+    {
+      "name": "contact page wires contactStructuredData",
+      "pass": true
+    },
+    {
+      "name": "services page wires servicesStructuredData",
+      "pass": true
+    },
+    {
+      "name": "home route has JSON-LD",
+      "pass": true,
+      "status": 200,
+      "navError": null
+    },
+    {
+      "name": "home JSON-LD parses",
+      "pass": true
+    },
+    {
+      "name": "home JSON-LD has schema.org context",
+      "pass": true
+    },
+    {
+      "name": "home JSON-LD includes Organization",
+      "pass": true
+    },
+    {
+      "name": "home JSON-LD does not use localhost",
+      "pass": true
+    },
+    {
+      "name": "contact route has JSON-LD",
+      "pass": true,
+      "status": 200,
+      "navError": null
+    },
+    {
+      "name": "contact JSON-LD parses",
+      "pass": true
+    },
+    {
+      "name": "contact JSON-LD has schema.org context",
+      "pass": true
+    },
+    {
+      "name": "contact JSON-LD includes ContactPage",
+      "pass": true
+    },
+    {
+      "name": "contact JSON-LD does not use localhost",
+      "pass": true
+    },
+    {
+      "name": "services route has JSON-LD",
+      "pass": true,
+      "status": 200,
+      "navError": null
+    },
+    {
+      "name": "services JSON-LD parses",
+      "pass": true
+    },
+    {
+      "name": "services JSON-LD has schema.org context",
+      "pass": true
+    },
+    {
+      "name": "services JSON-LD includes Service",
+      "pass": true
+    },
+    {
+      "name": "services JSON-LD does not use localhost",
+      "pass": true
+    }
+  ],
+  "failed": []
+}

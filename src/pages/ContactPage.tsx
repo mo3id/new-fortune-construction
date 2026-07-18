@@ -4,6 +4,8 @@ import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 import { useQuery } from '@tanstack/react-query'
 import { apiFetch } from '@/lib/apiClient'
 import { ContactForm } from '@/components/contact/ContactForm'
+import { SeoHead } from '@/components/SeoHead'
+import { contactStructuredData, seoProfiles } from '@/lib/seo'
 
 import { usePageContent } from '@/hooks/usePageContent'
 
@@ -31,6 +33,7 @@ export default function ContactPage() {
 
     return (
         <div className="flex flex-col w-full bg-background min-h-screen">
+            <SeoHead profile={{ ...seoProfiles.contact, structuredData: contactStructuredData({ phone, email, address }) }} />
             <PageHero 
                 title={hero?.title || "Let's Build Something Together"}
                 description={hero?.description || "Ready to start your next infrastructure project? Get in touch with our team of experts today."}

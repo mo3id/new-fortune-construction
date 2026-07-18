@@ -1,6 +1,22 @@
 import { toast } from 'sonner'
+import { AppError } from '@/lib/errorHandling'
 
-const BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:3001'
+function normalizeBaseUrl(value: string): string {
+  return value.replace(/\/+$/, '')
+}
+
+function resolveApiBaseUrl(): string {
+  const configured = import.meta.env.VITE_API_URL?.trim()
+  if (configured) return normalizeBaseUrl(configured)
+
+  if (import.meta.env.PROD) {
+    throw new Error('VITE_API_URL must be configured for production builds.')
+  }
+
+  return 'http://localhost:3001'
+}
+
+const BASE = resolveApiBaseUrl()
 
 export const API = `${BASE}/api`
 
@@ -18,7 +34,11 @@ export async function apiFetch<T>(path: string, showErrors = false): Promise<T> 
       if (showErrors) {
         toast.error(errorMessage)
       }
-      throw new Error(`API ${path} → ${res.status}`)
+      throw new AppError(
+        `API ${path} returned ${res.status}`,
+        res.status === 404 ? 'not-found' : res.status >= 500 ? 'api-unavailable' : 'unknown',
+        res.status,
+      )
     }
     
     return res.json() as Promise<T>
@@ -28,7 +48,7 @@ export async function apiFetch<T>(path: string, showErrors = false): Promise<T> 
       if (showErrors) {
         toast.error(networkError)
       }
-      throw new Error(networkError)
+      throw new AppError(networkError, 'network')
     }
     throw error
   }

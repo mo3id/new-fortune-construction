@@ -104,6 +104,11 @@ export async function startServer() {
   const app = createApp(databaseStatus, runtimeConfig);
 
   app.listen(runtimeConfig.port, () => {
+    if (runtimeConfig.nodeEnv === 'production') {
+      safeLogger.info(`Fortune API running in production on port ${runtimeConfig.port}.`);
+      return;
+    }
+
     safeLogger.info(`Fortune API running on http://localhost:${runtimeConfig.port}`);
   });
 }

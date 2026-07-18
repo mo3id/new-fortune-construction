@@ -244,20 +244,22 @@ export default function PageContentEditor() {
       </div>
 
       {/* Page Tabs */}
-      <div className="flex gap-2 border-b border-slate-100 dark:border-slate-800 pb-0">
-        {PAGES.map(p => (
-          <button
-            key={p.key}
-            onClick={() => setActivePage(p.key)}
-            className={`px-6 py-3 text-xs font-bold uppercase tracking-wider rounded-t-xl transition-all border-b-2 -mb-[2px] ${
-              activePage === p.key
-                ? 'text-teal-600 border-teal-500 bg-teal-50/50 dark:bg-teal-900/10'
-                : 'text-slate-400 border-transparent hover:text-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800/50'
-            }`}
-          >
-            {p.label}
-          </button>
-        ))}
+      <div className="border-b border-slate-100 pb-0 dark:border-slate-800">
+        <div className="flex flex-wrap gap-2">
+          {PAGES.map(p => (
+            <button
+              key={p.key}
+              onClick={() => setActivePage(p.key)}
+              className={`shrink-0 px-6 py-3 text-xs font-bold uppercase tracking-wider rounded-t-xl transition-all border-b-2 -mb-[2px] ${
+                activePage === p.key
+                  ? 'text-teal-600 border-teal-500 bg-teal-50/50 dark:bg-teal-900/10'
+                  : 'text-slate-400 border-transparent hover:text-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800/50'
+              }`}
+            >
+              {p.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Sections */}

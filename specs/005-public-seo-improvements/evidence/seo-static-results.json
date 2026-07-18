@@ -1,0 +1,192 @@
+{
+  "scope": "all",
+  "results": [
+    {
+      "name": "index.html has fallback title",
+      "pass": true
+    },
+    {
+      "name": "index.html has fallback description",
+      "pass": true
+    },
+    {
+      "name": "router has /services route",
+      "pass": true
+    },
+    {
+      "name": "SEO profile exists for /",
+      "pass": true
+    },
+    {
+      "name": "SEO profile applied for /about",
+      "pass": true
+    },
+    {
+      "name": "SEO profile applied for /projects",
+      "pass": true
+    },
+    {
+      "name": "SEO profile applied for /projects/:id",
+      "pass": true
+    },
+    {
+      "name": "SEO profile applied for /services",
+      "pass": true
+    },
+    {
+      "name": "SEO profile applied for /hse",
+      "pass": true
+    },
+    {
+      "name": "SEO profile applied for /careers",
+      "pass": true
+    },
+    {
+      "name": "SEO profile applied for /contact",
+      "pass": true
+    },
+    {
+      "name": "canonical helper exists",
+      "pass": true
+    },
+    {
+      "name": "canonical helper uses non-localhost production fallback",
+      "pass": true
+    },
+    {
+      "name": "canonical helper guards localhost production output",
+      "pass": true
+    },
+    {
+      "name": "SeoHead component exists",
+      "pass": true
+    },
+    {
+      "name": "SocialPreviewProfile type exists",
+      "pass": true
+    },
+    {
+      "name": "SeoProfile has typed social metadata field",
+      "pass": true
+    },
+    {
+      "name": "social metadata profile exists for home",
+      "pass": true
+    },
+    {
+      "name": "social metadata profile exists for about",
+      "pass": true
+    },
+    {
+      "name": "social metadata profile exists for projects",
+      "pass": true
+    },
+    {
+      "name": "social metadata profile exists for services",
+      "pass": true
+    },
+    {
+      "name": "social metadata profile exists for hse",
+      "pass": true
+    },
+    {
+      "name": "social metadata profile exists for careers",
+      "pass": true
+    },
+    {
+      "name": "social metadata profile exists for contact",
+      "pass": true
+    },
+    {
+      "name": "project detail social metadata builder exists",
+      "pass": true
+    },
+    {
+      "name": "SeoHead emits OG URL and image from social metadata",
+      "pass": true
+    },
+    {
+      "name": "sitemap exists",
+      "pass": true,
+      "deferredUntil": "US3"
+    },
+    {
+      "name": "robots exists",
+      "pass": true,
+      "deferredUntil": "US3"
+    },
+    {
+      "name": "sitemap includes /",
+      "pass": true
+    },
+    {
+      "name": "sitemap includes /about",
+      "pass": true
+    },
+    {
+      "name": "sitemap includes /projects",
+      "pass": true
+    },
+    {
+      "name": "sitemap includes /services",
+      "pass": true
+    },
+    {
+      "name": "sitemap includes /hse",
+      "pass": true
+    },
+    {
+      "name": "sitemap includes /careers",
+      "pass": true
+    },
+    {
+      "name": "sitemap includes /contact",
+      "pass": true
+    },
+    {
+      "name": "sitemap excludes private routes",
+      "pass": true
+    },
+    {
+      "name": "sitemap does not use localhost",
+      "pass": true
+    },
+    {
+      "name": "sitemap uses production canonical base URL",
+      "pass": true
+    },
+    {
+      "name": "robots allows public site",
+      "pass": true
+    },
+    {
+      "name": "robots disallows dashboard",
+      "pass": true
+    },
+    {
+      "name": "robots disallows login",
+      "pass": true
+    },
+    {
+      "name": "robots disallows admin",
+      "pass": true
+    },
+    {
+      "name": "robots disallows api",
+      "pass": true
+    },
+    {
+      "name": "robots disallows private management",
+      "pass": true
+    },
+    {
+      "name": "robots references production sitemap",
+      "pass": true
+    },
+    {
+      "name": "robots does not use localhost",
+      "pass": true
+    }
+  ],
+  "failed": []
+}

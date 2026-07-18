@@ -10,6 +10,8 @@ import { apiFetch } from '@/lib/apiClient'
 import { projectsData } from '@/data/projects'
 import { Image, Button } from '@fortune/shared-ui'
 import { normalizeProject, RawProject } from '@/lib/projectPresentation'
+import { SeoHead } from '@/components/SeoHead'
+import { organizationStructuredData, seoProfiles } from '@/lib/seo'
 
 function App() {
     const { data: apiProjects } = useQuery<RawProject[]>({
@@ -24,6 +26,7 @@ function App() {
 
     return (
         <div className="flex flex-col w-full bg-background">
+            <SeoHead profile={{ ...seoProfiles.home, structuredData: organizationStructuredData() }} />
             <Hero />
             <Impact />
             <Services />

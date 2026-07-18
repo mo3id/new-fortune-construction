@@ -6,6 +6,8 @@ import { ShieldCheck, HardHat, Leaf, Award, Download, Search, Type, Smile, Phone
 import ApplicationForm from '@/components/ApplicationForm'
 import { apiFetch } from '@/lib/apiClient'
 import { usePageContent } from '@/hooks/usePageContent'
+import { SeoHead } from '@/components/SeoHead'
+import { seoProfiles } from '@/lib/seo'
 
 const ICON_MAP: Record<string, any> = {
     ShieldCheck, HardHat, Leaf, Award, Download, Search, Type, Smile, Phone, Mail, MapPin, Clock, Share2, Globe, Settings, Users, Briefcase, Building2, Construction, CheckCircle2, AlertCircle, Info, ExternalLink, ChevronRight, Route, Home, CheckCircle, TrendingUp
@@ -68,6 +70,7 @@ export default function CareersPage() {
 
     return (
         <div className="flex flex-col w-full bg-background min-h-screen">
+            <SeoHead profile={seoProfiles.careers} />
             <PageHero 
                 title={hero?.title || <>Build Your Future with <span className="text-teal-500">Fortune</span></>}
                 description={hero?.description || "Join a team of driven professionals dedicated to engineering excellence. We don't just build infrastructure; we build careers."}

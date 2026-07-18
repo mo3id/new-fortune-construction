@@ -4,6 +4,8 @@ import { Container, SectionHeader, PageHero } from '@fortune/shared-ui'
 import PartnersSection from '@/components/PartnersSection'
 import { ShieldCheck, HardHat, Leaf, Award, Download, Search, Type, Smile, Phone, Mail, MapPin, Clock, Share2, Globe, Settings, Users, Briefcase, Building2, Construction, CheckCircle2, AlertCircle, Info, ExternalLink, ChevronRight } from 'lucide-react'
 import { usePageContent } from '@/hooks/usePageContent'
+import { SeoHead } from '@/components/SeoHead'
+import { seoProfiles } from '@/lib/seo'
 
 interface HSEContent {
     hero?: { title?: string; description?: string; image?: string }
@@ -56,6 +58,7 @@ export default function HSEPage() {
 
     return (
         <div className="flex flex-col w-full bg-background min-h-screen">
+            <SeoHead profile={seoProfiles.hse} />
             <PageHero 
                 title={hero?.title || <>Zero Compromise on <span className="text-teal-500">Safety & Quality</span></>}
                 description={hero?.description || "Our commitment to Health, Safety, and Environment (HSE) and rigorous Quality Assurance is the foundation of every project we undertake."}

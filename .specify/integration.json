@@ -1,0 +1,20 @@
+{
+  "version": "0.8.5.dev0",
+  "integration_state_schema": 1,
+  "installed_integrations": [
+    "codex",
+    "opencode"
+  ],
+  "integration_settings": {
+    "codex": {
+      "skill": ".agents/skills/speckit",
+      "invoke_prefix": "$speckit"
+    },
+    "opencode": {
+      "script": "sh",
+      "invoke_separator": "."
+    }
+  },
+  "integration": "codex",
+  "default_integration": "codex"
+}

@@ -1,8 +1,41 @@
 import axios from 'axios'
+import { isNetworkUnavailableError } from './errorHandling'
 
-export const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001'
+const DEFAULT_LOCAL_API_URL = 'http://localhost:3001'
+const DEFAULT_LOCAL_PUBLIC_SITE_URL = 'http://localhost:5173'
+
+function normalizeBaseUrl(value: string): string {
+  return value.replace(/\/+$/, '')
+}
+
+function resolveConfiguredUrl(value: string | undefined, fallback: string, envName: string): string {
+  const configured = value?.trim()
+  if (configured) return normalizeBaseUrl(configured)
+
+  if (import.meta.env.PROD) {
+    throw new Error(`${envName} must be configured for production builds.`)
+  }
+
+  return fallback
+}
+
+export const BASE_URL = resolveConfiguredUrl(import.meta.env.VITE_API_URL, DEFAULT_LOCAL_API_URL, 'VITE_API_URL')
+export const PUBLIC_SITE_URL = resolveConfiguredUrl(
+  import.meta.env.VITE_PUBLIC_SITE_URL,
+  DEFAULT_LOCAL_PUBLIC_SITE_URL,
+  'VITE_PUBLIC_SITE_URL',
+)
 
 export const api = axios.create({ baseURL: `${BASE_URL}/api` })
+
+export function isDashboardApiUnavailableError(error: unknown): boolean {
+  return isNetworkUnavailableError(error)
+}
+
+export function resolveUploadUrl(path: string): string {
+  if (/^https?:\/\//i.test(path)) return path
+  return `${BASE_URL}${path.startsWith('/') ? path : `/${path}`}`
+}
 
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('fc_token')
@@ -27,7 +60,7 @@ export const uploadImage = async (file: File): Promise<string> => {
   const { data } = await api.post('/upload', fd, {
     headers: { 'Content-Type': 'multipart/form-data' },
   })
-  return `${BASE_URL}${data.url}`
+  return resolveUploadUrl(data.url)
 }
 
 export const uploadVideo = async (file: File): Promise<string> => {
@@ -36,7 +69,7 @@ export const uploadVideo = async (file: File): Promise<string> => {
   const { data } = await api.post('/upload/video', fd, {
     headers: { 'Content-Type': 'multipart/form-data' },
   })
-  return `${BASE_URL}${data.url}`
+  return resolveUploadUrl(data.url)
 }
 
 export const uploadMedia = async (file: File): Promise<string> => {

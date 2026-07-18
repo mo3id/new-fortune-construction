@@ -1,0 +1,87 @@
+{
+  "scope": "us4-before",
+  "results": [
+    {
+      "name": "StructuredDataItem type exists",
+      "pass": false
+    },
+    {
+      "name": "organization structured data builder exists",
+      "pass": false
+    },
+    {
+      "name": "contact structured data builder exists",
+      "pass": false
+    },
+    {
+      "name": "services structured data builder exists",
+      "pass": false
+    },
+    {
+      "name": "structured data uses schema.org context",
+      "pass": false
+    },
+    {
+      "name": "structured data uses known SITE constants",
+      "pass": false
+    },
+    {
+      "name": "structured data includes visible service names",
+      "pass": false
+    },
+    {
+      "name": "home page wires organizationStructuredData",
+      "pass": false
+    },
+    {
+      "name": "contact page wires contactStructuredData",
+      "pass": false
+    },
+    {
+      "name": "services page wires servicesStructuredData",
+      "pass": false
+    }
+  ],
+  "failed": [
+    {
+      "name": "StructuredDataItem type exists",
+      "pass": false
+    },
+    {
+      "name": "organization structured data builder exists",
+      "pass": false
+    },
+    {
+      "name": "contact structured data builder exists",
+      "pass": false
+    },
+    {
+      "name": "services structured data builder exists",
+      "pass": false
+    },
+    {
+      "name": "structured data uses schema.org context",
+      "pass": false
+    },
+    {
+      "name": "structured data uses known SITE constants",
+      "pass": false
+    },
+    {
+      "name": "structured data includes visible service names",
+      "pass": false
+    },
+    {
+      "name": "home page wires organizationStructuredData",
+      "pass": false
+    },
+    {
+      "name": "contact page wires contactStructuredData",
+      "pass": false
+    },
+    {
+      "name": "services page wires servicesStructuredData",
+      "pass": false
+    }
+  ]
+}

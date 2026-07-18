@@ -12,6 +12,8 @@ export function Image({
   className, 
   fallbackSrc = '/Logo-new-01.png', 
   fallbackClassName, 
+  loading = 'lazy',
+  decoding = 'async',
   ...props 
 }: ImageProps) {
   const [error, setError] = useState(false);
@@ -20,6 +22,8 @@ export function Image({
     <img
       src={error || !src ? fallbackSrc : src}
       alt={alt}
+      loading={loading}
+      decoding={decoding}
       className={cn(
         className,
         (error || !src) && cn('object-contain bg-navy-50 p-8', fallbackClassName)

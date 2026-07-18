@@ -15,6 +15,7 @@ export function PageHero({ title, description, imageSrc, imageAlt }: PageHeroPro
                 <Image 
                     src={imageSrc} 
                     alt={imageAlt} 
+                    loading="eager"
                     className="w-full h-full object-cover object-center scale-105"
                 />
                 <div className="absolute inset-0 bg-slate-950/60 backdrop-blur-[2px]" />

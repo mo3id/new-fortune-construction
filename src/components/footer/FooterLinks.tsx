@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom'
 const FOOTER_LINKS = {
     Company: [
         { label: 'About Us', href: '/about' },
-        { label: 'Services', href: '/#services' },
+        { label: 'Services', href: '/services' },
         { label: 'Our Projects', href: '/projects' },
         { label: 'HSE Policy', href: '/hse' },
         { label: 'Careers', href: '/careers' },
     ],
     Services: [
-        { label: 'Roads & Infrastructure', href: '/#services' },
-        { label: 'Commercial Buildings', href: '/#services' },
-        { label: 'Bridges & Structures', href: '/#services' },
-        { label: 'Project Management', href: '/#services' },
+        { label: 'Roads & Infrastructure', href: '/services' },
+        { label: 'Commercial Buildings', href: '/services' },
+        { label: 'Bridges & Structures', href: '/services' },
+        { label: 'Project Management', href: '/services' },
         { label: 'Contact Us', href: '/contact' },
     ],
 }

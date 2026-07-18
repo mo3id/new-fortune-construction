@@ -1,0 +1,46 @@
+{
+  "scope": "us4-after",
+  "results": [
+    {
+      "name": "StructuredDataItem type exists",
+      "pass": true
+    },
+    {
+      "name": "organization structured data builder exists",
+      "pass": true
+    },
+    {
+      "name": "contact structured data builder exists",
+      "pass": true
+    },
+    {
+      "name": "services structured data builder exists",
+      "pass": true
+    },
+    {
+      "name": "structured data uses schema.org context",
+      "pass": true
+    },
+    {
+      "name": "structured data uses known SITE constants",
+      "pass": true
+    },
+    {
+      "name": "structured data includes visible service names",
+      "pass": true
+    },
+    {
+      "name": "home page wires organizationStructuredData",
+      "pass": true
+    },
+    {
+      "name": "contact page wires contactStructuredData",
+      "pass": true
+    },
+    {
+      "name": "services page wires servicesStructuredData",
+      "pass": true
+    }
+  ],
+  "failed": []
+}
