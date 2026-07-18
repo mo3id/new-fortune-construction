@@ -11,6 +11,8 @@ apps/api/.mongodb-data
 apps/api/uploads
 
 dist
+!apps/api/dist/
+!apps/api/dist/**
 output
 tmp
 *.zip

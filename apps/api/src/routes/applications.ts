@@ -1,10 +1,9 @@
 import { Router, Request, Response } from 'express';
 import multer from 'multer';
-import path from 'path';
-import fs from 'fs';
 import JobApplication from '../models/JobApplication';
 import { protect } from '../middleware/auth';
 import { sanitizeUploadFilename, uploadFileFilter, uploadSizeLimit } from '../utils/uploadValidation';
+import { ensureUploadDir } from '../utils/uploadStorage';
 import { asyncHandler } from '../middleware/asyncHandler';
 import { validateRequest } from '../middleware/validateRequest';
 import {
@@ -14,8 +13,7 @@ import {
   idParamSchema,
 } from '../validation/schemas';
 
-const uploadDir = path.join(__dirname, '../../uploads/cvs');
-if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
+const uploadDir = ensureUploadDir('cvs');
 
 const storage = multer.diskStorage({
   destination: (_req, _file, cb) => cb(null, uploadDir),

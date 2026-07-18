@@ -18,6 +18,7 @@ output/
 frontend-prod.zip
 frontend_deploy.zip
 vite.config.ts.timestamp-*
+api/serverless.cjs
 
 # Editor directories and files
 .vscode/*

@@ -1,8 +1,25 @@
 {
-  "rewrites": [
+  "functions": {
+    "api/[...path].js": {
+      "includeFiles": "apps/api/dist/**",
+      "maxDuration": 60
+    }
+  },
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/"
+      "src": "/api/(.*)",
+      "dest": "/api/[...path].js"
+    },
+    {
+      "src": "/health",
+      "dest": "/api/[...path].js"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
     }
   ]
 }
