@@ -3,12 +3,12 @@ import cors from 'cors';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
+import path from 'path';
 import { connectDB, DatabaseStatus } from './config/db';
 import { loadRuntimeConfig, RuntimeConfig } from './config/runtime';
 import { createCorsOptions } from './config/cors';
 import { errorHandler } from './middleware/errors';
 import { safeLogger } from './utils/safeLogger';
-import { uploadBaseDir } from './utils/uploadStorage';
 
 import authRoutes from './routes/auth';
 import projectRoutes from './routes/projects';
@@ -38,10 +38,6 @@ export function createApp(
   runtimeConfig: RuntimeConfig = loadRuntimeConfig()
 ) {
   const app = express();
-  if (runtimeConfig.nodeEnv === 'production') {
-    app.set('trust proxy', 1);
-  }
-
   app.use(helmet({
     crossOriginResourcePolicy: { policy: "cross-origin" }
   }));
@@ -59,32 +55,7 @@ export function createApp(
   app.use(limiter);
   app.use(express.json({ limit: '10mb' }));
   app.use(express.urlencoded({ extended: true }));
-  app.use('/uploads', express.static(uploadBaseDir()));
-
-  const healthHandler = (_req: express.Request, res: express.Response) => {
-    const status = databaseStatus.ready ? 'ok' : 'degraded';
-    res.json({
-      status,
-      timestamp: new Date().toISOString(),
-      services: {
-        api: 'ok',
-        database: databaseStatus.ready ? 'ok' : 'unavailable',
-      },
-      mode: runtimeConfig.nodeEnv,
-      database: {
-        mode: databaseStatus.mode,
-      },
-    });
-  };
-
-  app.get('/health', healthHandler);
-  app.get('/api/health', healthHandler);
-
-  if (!databaseStatus.ready) {
-    app.use('/api', (_req, res) => {
-      res.status(503).json({ message: 'Database unavailable', code: 'DATABASE_UNAVAILABLE' });
-    });
-  }
+  app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
   app.use('/api/auth', authRoutes);
   app.use('/api/projects', projectRoutes);
@@ -100,6 +71,22 @@ export function createApp(
   app.use('/api/content', pageContentRoutes);
   app.use('/api/success-stories', successStoryRoutes);
   app.use('/api/project-categories', projectCategoryRoutes);
+
+  app.get('/health', (_req, res) => {
+    const status = databaseStatus.ready ? 'ok' : 'degraded';
+    res.json({
+      status,
+      timestamp: new Date().toISOString(),
+      services: {
+        api: 'ok',
+        database: databaseStatus.ready ? 'ok' : 'unavailable',
+      },
+      mode: runtimeConfig.nodeEnv,
+      database: {
+        mode: databaseStatus.mode,
+      },
+    });
+  });
 
   app.use(errorHandler);
 
@@ -126,11 +113,7 @@ export async function startServer() {
   });
 }
 
-if (
-  typeof require !== 'undefined' &&
-  typeof module !== 'undefined' &&
-  require.main === module
-) {
+if (require.main === module) {
   void startServer().catch((error) => {
     safeLogger.error('API startup failed.', error);
     process.exit(1);

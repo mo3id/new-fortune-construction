@@ -1,12 +1,15 @@
 import { Router, Request, Response } from 'express';
 import multer from 'multer';
+import path from 'path';
+import fs from 'fs';
 import { protect } from '../middleware/auth';
 import { ApiError } from '../middleware/errors';
 import { sanitizeUploadFilename, uploadFileFilter, uploadSizeLimit } from '../utils/uploadValidation';
-import { ensureUploadDir } from '../utils/uploadStorage';
 
-const imageUploadDir = ensureUploadDir('images');
-const videoUploadDir = ensureUploadDir('videos');
+const imageUploadDir = path.join(__dirname, '../../uploads/images');
+const videoUploadDir = path.join(__dirname, '../../uploads/videos');
+if (!fs.existsSync(imageUploadDir)) fs.mkdirSync(imageUploadDir, { recursive: true });
+if (!fs.existsSync(videoUploadDir)) fs.mkdirSync(videoUploadDir, { recursive: true });
 
 const imageStorage = multer.diskStorage({
   destination: (_req, _file, cb) => cb(null, imageUploadDir),

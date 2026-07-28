@@ -9,8 +9,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "npm run build --workspace=apps/api && npm run build:api-function && vite build",
-    "build:api-function": "esbuild api/serverless-entry.ts --bundle --platform=node --target=node20 --format=cjs --outfile=api/serverless.cjs --external:./autoSeed --external:bcryptjs --external:cors --external:dotenv --external:express --external:express-rate-limit --external:helmet --external:jsonwebtoken --external:mongodb-memory-server --external:mongoose --external:multer --external:zod",
+    "build": "vite build",
     "typecheck": "tsc --noEmit",
     "preview": "vite preview",
     "dev:api": "npm run dev --workspace=apps/api",

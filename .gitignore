@@ -11,14 +11,13 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+*.tsbuildinfo
 *.local
 *.tsbuildinfo
 tmp/
 output/
 frontend-prod.zip
-frontend_deploy.zip
 vite.config.ts.timestamp-*
-api/serverless.cjs
 
 # Editor directories and files
 .vscode/*

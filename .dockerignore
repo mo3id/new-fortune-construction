@@ -1,0 +1,11 @@
+.git
+.gitignore
+node_modules
+dist
+apps/api/dist
+apps/dashboard/dist
+packages/*/dist
+.env
+.env.*
+npm-debug.log*
+frontend_deploy.zip

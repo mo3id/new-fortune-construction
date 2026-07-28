@@ -1,16 +1,12 @@
 import mongoose from 'mongoose';
+import { MongoMemoryServer } from 'mongodb-memory-server';
 import os from 'os';
 import path from 'path';
 import fs from 'fs';
 import { safeLogger } from '../utils/safeLogger';
 import { allowsRemoteDatabase, isRemoteMongoUri } from './runtime';
 
-interface MongoMemoryServerInstance {
-  getUri(): string;
-  stop(): Promise<boolean | void>;
-}
-
-let memServer: MongoMemoryServerInstance | null = null;
+let memServer: MongoMemoryServer | null = null;
 
 export type DatabaseMode = 'remote' | 'local' | 'memory' | 'unavailable';
 
@@ -37,11 +33,6 @@ export async function connectDB(): Promise<DatabaseStatus> {
     }
   }
 
-  if (process.env.NODE_ENV === 'production') {
-    safeLogger.error('Production MongoDB connection is unavailable; local database fallbacks are disabled.');
-    return { mode: 'unavailable', ready: false, isNewDatabase: false };
-  }
-
   try {
     await mongoose.connect('mongodb://localhost:27017/fortune-construction', { serverSelectionTimeoutMS: 3000 });
     safeLogger.info('MongoDB connected (local)');
@@ -55,16 +46,14 @@ export async function connectDB(): Promise<DatabaseStatus> {
   if (isNewDb) fs.mkdirSync(dbPath, { recursive: true });
 
   try {
-    const { MongoMemoryServer } = await import('mongodb-memory-server');
     safeLogger.info('Starting persistent local MongoDB...');
-    const server = await MongoMemoryServer.create({
+    memServer = await MongoMemoryServer.create({
       instance: {
         dbPath,
         storageEngine: 'wiredTiger',
       },
     });
-    memServer = server;
-    const memUri = server.getUri();
+    const memUri = memServer.getUri();
     await mongoose.connect(memUri);
     safeLogger.info('MongoDB connected (persistent file storage at .mongodb-data/)');
     safeLogger.info('Data survives restarts. Set MONGODB_URI in .env for cloud Atlas.');
@@ -74,17 +63,15 @@ export async function connectDB(): Promise<DatabaseStatus> {
   }
 
   try {
-    const { MongoMemoryServer } = await import('mongodb-memory-server');
     const tempDbPath = fs.mkdtempSync(path.join(os.tmpdir(), 'fortune-api-mongo-'));
     safeLogger.warn('Starting temporary local MongoDB because persistent local storage is unavailable.');
-    const server = await MongoMemoryServer.create({
+    memServer = await MongoMemoryServer.create({
       instance: {
         dbPath: tempDbPath,
         storageEngine: 'wiredTiger',
       },
     });
-    memServer = server;
-    const memUri = server.getUri();
+    const memUri = memServer.getUri();
     await mongoose.connect(memUri);
     safeLogger.info('MongoDB connected (temporary local storage)');
     return { mode: 'memory', ready: true, isNewDatabase: true };

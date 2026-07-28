@@ -1,25 +1,11 @@
 {
-  "functions": {
-    "api/[...path].js": {
-      "includeFiles": "apps/api/dist/**",
-      "maxDuration": 60
-    }
-  },
-  "routes": [
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/[...path].js"
-    },
-    {
-      "src": "/health",
-      "dest": "/api/[...path].js"
-    },
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/"
+      "source": "/(.*)",
+      "destination": "/"
     }
   ]
 }
